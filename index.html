@@ -3,7 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Award-winning Edtech Director-in-Residence and custom PD for independent schools.">
+    <meta name="description" content="Award-winning Edtech Director-in-Residence and custom professional development for independent schools. Strategic technology consulting for SCISA and PAIS schools across South Carolina.">
+    <meta name="keywords" content="edtech, director-in-residence, professional development, independent schools, SCISA, PAIS, South Carolina">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Carolina EdTech | Edtech Director-in-Residence">
+    <meta property="og:description" content="Award-winning technology consulting and professional development for independent schools.">
+    <meta property="og:site_name" content="Carolina EdTech">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Carolina EdTech | Edtech Director-in-Residence">
+    <meta name="twitter:description" content="Strategic technology consulting for independent schools.">
+    
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Carolina EdTech",
+        "description": "Edtech Director-in-Residence and professional development consulting for independent schools",
+        "areaServed": "South Carolina",
+        "serviceType": ["Educational Technology Consulting", "Professional Development", "Technology Training"],
+        "url": "https://carolina-edtech.com"
+    }
+    </script>
+    
     <title>Edtech Director-in-Residence | Carolina EdTech</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -14,49 +40,115 @@
         h1, h2, h3, h4, .serif { font-family: 'Merriweather', serif; }
         
         .hero-bg {
-            background: linear-gradient(to right, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80');
+            background: linear-gradient(to right, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=1600');
             background-size: cover;
             background-position: center;
+        }
+        
+        /* Mobile menu animation */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .mobile-menu.active {
+            max-height: 300px;
+        }
+        
+        /* Smooth scroll fallback */
+        @supports not (scroll-behavior: smooth) {
+            html {
+                scroll-behavior: auto;
+            }
+        }
+        
+        /* Accessibility: High contrast focus states */
+        button:focus-visible,
+        a:focus-visible,
+        input:focus-visible,
+        select:focus-visible,
+        textarea:focus-visible {
+            outline: 3px solid #3b82f6;
+            outline-offset: 2px;
+        }
+        
+        /* Print styles */
+        @media print {
+            nav, footer {
+                display: none;
+            }
         }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased">
 
-    <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-md">
+    <!-- Mobile Menu Button Script -->
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const button = document.getElementById('menu-button');
+            menu.classList.toggle('active');
+            button.setAttribute('aria-expanded', menu.classList.contains('active'));
+        }
+    </script>
+
+    <!-- Navigation -->
+    <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-md" role="navigation" aria-label="Main navigation">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 bg-blue-600 rounded flex items-center justify-center text-xl font-bold font-serif border-2 border-yellow-500">
+                    <div class="w-10 h-10 bg-blue-600 rounded flex items-center justify-center text-xl font-bold font-serif border-2 border-yellow-500" aria-label="Carolina EdTech logo">
                         CE
                     </div>
                     <span class="font-serif text-2xl font-bold tracking-wide">Carolina EdTech</span>
                 </div>
+                
+                <!-- Desktop Navigation -->
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="#philosophy" class="hover:text-blue-400 transition">Philosophy</a>
                     <a href="#advantage" class="hover:text-blue-400 transition">The Advantage</a>
                     <a href="#services" class="hover:text-blue-400 transition">Services & Tiers</a>
                     <a href="#pd" class="hover:text-blue-400 transition">PD Catalog</a>
-                    <a href="#contact" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2 rounded-md font-semibold transition shadow-lg">Strategy Consultation</a>
+                    <a href="#contact" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2 rounded-md font-semibold transition shadow-lg">Start Consultation</a>
                 </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="menu-button" class="md:hidden flex flex-col space-y-1 focus:outline-none" onclick="toggleMobileMenu()" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="w-6 h-1 bg-white rounded"></span>
+                    <span class="w-6 h-1 bg-white rounded"></span>
+                    <span class="w-6 h-1 bg-white rounded"></span>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu" class="mobile-menu md:hidden pb-4">
+                <a href="#philosophy" class="block py-2 px-4 hover:bg-slate-800 rounded transition">Philosophy</a>
+                <a href="#advantage" class="block py-2 px-4 hover:bg-slate-800 rounded transition">The Advantage</a>
+                <a href="#services" class="block py-2 px-4 hover:bg-slate-800 rounded transition">Services & Tiers</a>
+                <a href="#pd" class="block py-2 px-4 hover:bg-slate-800 rounded transition">PD Catalog</a>
+                <a href="#contact" class="block py-2 px-4 bg-blue-600 hover:bg-blue-500 rounded transition font-semibold mt-2">Start Consultation</a>
             </div>
         </div>
     </nav>
 
-    <header class="hero-bg text-white py-32 border-b-8 border-blue-600">
+    <!-- Hero Header -->
+    <header class="hero-bg text-white py-24 md:py-32 border-b-8 border-blue-600">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
             <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
                 Technology Must Never Drive the Bus.<br>
                 <span class="text-blue-400">We Provide the Wisdom to Use It Well.</span>
             </h1>
-            <p class="text-xl md:text-2xl mb-10 max-w-3xl text-slate-200">
-                Tailored Edtech Director-in-Residence partnerships, mission-aligned assistive technology architectures, and human-centered AI integration designed exclusively for independent and preparatory schools.
+            <p class="text-lg md:text-2xl mb-10 max-w-3xl text-slate-200">
+                Tailored Edtech Director-in-Residence partnerships, mission-aligned assistive technology architectures, and human-centered AI integration designed exclusively for independent and preparatory schools across the Southeast.
             </p>
             <a href="#contact" class="inline-block bg-blue-600 hover:bg-blue-500 text-white text-lg px-8 py-4 rounded font-bold transition shadow-xl border border-blue-400">
-                Request an Institutional Strategy Consultation
+                Request Institutional Strategy Consultation
             </a>
         </div>
     </header>
 
+    <!-- The Advantage Section -->
     <section id="advantage" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -65,44 +157,50 @@
             </div>
             
             <div class="grid md:grid-cols-3 gap-10">
-                <div class="bg-slate-50 p-8 rounded-lg shadow border-t-4 border-slate-800">
+                <!-- Advantage 1: Pedagogical -->
+                <div class="bg-slate-50 p-8 rounded-lg shadow border-t-4 border-slate-800 hover:shadow-lg transition">
                     <h3 class="text-xl font-bold mb-3 text-slate-900">1. Pedagogical Rooting</h3>
-                    <p class="text-slate-600 font-semibold mb-2">15-Year Classroom Veteran</p>
-                    <p class="text-slate-600 text-sm">Grounded in 15 years of traditional Latin pedagogy. I speak the language of your most veteran faculty members, showing them how technology can directly serve classical learning goals like deep analysis and logical thinking without distraction.</p>
+                    <p class="text-slate-600 font-semibold mb-4">15-Year Classroom Veteran</p>
+                    <p class="text-slate-600 text-sm">Grounded in 15 years of traditional Latin pedagogy and classical education principles. I speak the language of your most veteran faculty members, demonstrating how technology can enhance—not replace—rigorous academic standards and time-honored teaching methods.</p>
                 </div>
-                <div class="bg-slate-50 p-8 rounded-lg shadow border-t-4 border-yellow-500">
+                
+                <!-- Advantage 2: Administrative -->
+                <div class="bg-slate-50 p-8 rounded-lg shadow border-t-4 border-yellow-500 hover:shadow-lg transition">
                     <h3 class="text-xl font-bold mb-3 text-slate-900">2. Administrative Excellence</h3>
-                    <p class="text-slate-600 font-semibold mb-2">NBOA Award Winner</p>
-                    <p class="text-slate-600 text-sm">Recipient of the National Business Officers Association Professional Achievement Award. Every digital strategy is designed to align strictly with business office priorities, risk management, and your fiscal sustainability.</p>
+                    <p class="text-slate-600 font-semibold mb-4">NBOA Award Winner</p>
+                    <p class="text-slate-600 text-sm">Recipient of the National Business Officers Association Professional Achievement Award. Every digital strategy is designed to align strictly with your school's mission, values, and fiscal stewardship principles while maximizing ROI on technology investments.</p>
                 </div>
-                <div class="bg-slate-50 p-8 rounded-lg shadow border-t-4 border-blue-600">
+                
+                <!-- Advantage 3: Technical -->
+                <div class="bg-slate-50 p-8 rounded-lg shadow border-t-4 border-blue-600 hover:shadow-lg transition">
                     <h3 class="text-xl font-bold mb-3 text-slate-900">3. Technical Mastery</h3>
-                    <p class="text-slate-600 font-semibold mb-2">Google for Education Trainer</p>
-                    <p class="text-slate-600 text-sm">Representing 1 of only 7 certified experts within a 50-mile radius of the Lowcountry. Expertly optimizing the digital ecosystem that powers modern K-12 preparatory academics safely and efficiently.</p>
+                    <p class="text-slate-600 font-semibold mb-4">Google for Education Trainer</p>
+                    <p class="text-slate-600 text-sm">One of only 7 certified experts within a 50-mile radius of the Lowcountry. Expert in architecture, implementation, and optimization of the digital ecosystems that power modern independent schools—from infrastructure to classroom integration.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Philosophy Section -->
     <section id="philosophy" class="py-20 bg-slate-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
                     <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-400">Our Philosophy: Augmentation, Not Automation</h2>
-                    <p class="mb-4 text-slate-300">We firmly believe technology represents a specialized toolbox to be handled by intentional human hands. The instructor’s academic material and interpersonal mentorship must always remain the star of the show.</p>
+                    <p class="mb-4 text-slate-300">We firmly believe technology represents a specialized toolbox to be handled by intentional human hands. The instructor's academic material and intellectual leadership must never be sacrificed for the sake of technological novelty. Instead, technology should amplify pedagogical excellence.</p>
                     <ul class="space-y-4 mt-8">
                         <li class="flex items-start">
-                            <span class="text-yellow-500 mr-3 text-xl">✓</span>
+                            <span class="text-yellow-500 mr-3 text-xl font-bold" aria-hidden="true">✓</span>
                             <div>
                                 <strong class="block text-lg">The "Colored Pencil" Analogy</strong>
-                                <span class="text-slate-400 text-sm">Digital tools are simply the colored pencils of the 21st century. They shouldn't be isolated to a lab; they should be woven dynamically to clarify science, map history, and organize math.</span>
+                                <span class="text-slate-400 text-sm">Digital tools are simply the colored pencils of the 21st century. They shouldn't be isolated to a lab; they should be woven dynamically throughout your curriculum as extensions of the teacher's pedagogical vision.</span>
                             </div>
                         </li>
                         <li class="flex items-start">
-                            <span class="text-yellow-500 mr-3 text-xl">✓</span>
+                            <span class="text-yellow-500 mr-3 text-xl font-bold" aria-hidden="true">✓</span>
                             <div>
                                 <strong class="block text-lg">Ditching Passive Edu-tainment</strong>
-                                <span class="text-slate-400 text-sm">We strictly oppose uncritical digital downtime. Activities must be structured, teacher-led, and purposefully mapped to rigorous lesson objectives.</span>
+                                <span class="text-slate-400 text-sm">We strictly oppose uncritical digital downtime. Activities must be structured, teacher-led, and purposefully mapped to rigorous learning objectives with measurable outcomes for student mastery.</span>
                             </div>
                         </li>
                     </ul>
@@ -111,151 +209,244 @@
                     <h3 class="text-2xl font-bold mb-4 text-white">The Teacher Action Plan</h3>
                     <p class="text-sm text-slate-300 mb-6">Every core consulting engagement includes our proprietary framework to ensure visible classroom results:</p>
                     <ul class="space-y-3 text-sm text-slate-300">
-                        <li><strong class="text-blue-300">1. Strategic Objective:</strong> Pinpoints the mission-aligned goal.</li>
-                        <li><strong class="text-blue-300">2. The Augmentation:</strong> Technical tools paired with academic directives.</li>
-                        <li><strong class="text-blue-300">3. Expected Outcome:</strong> Measurable improvement in work organization or student engagement.</li>
-                        <li><strong class="text-blue-300">4. Technology Guardrails:</strong> Traffic-light system (🟢 Open, 🟡 Citation, 🔴 Prohibited) to safeguard academic integrity.</li>
+                        <li><strong class="text-blue-300">1. Strategic Objective:</strong> Pinpoints the mission-aligned goal and desired pedagogical outcome.</li>
+                        <li><strong class="text-blue-300">2. The Augmentation:</strong> Technical tools paired with specific academic directives and classroom workflows.</li>
+                        <li><strong class="text-blue-300">3. Expected Outcome:</strong> Measurable improvement in student work organization, engagement, or academic performance.</li>
+                        <li><strong class="text-blue-300">4. Technology Guardrails:</strong> Clear guidelines (Allow, Citation Required, Prohibited) to safeguard academic integrity and student safety.</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="services" class="py-20 bg-slate-50 pt-24">
+    <!-- Services & Engagement Tiers -->
+    <section id="services" class="py-20 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Engagement Tiers</h2>
-                <p class="text-lg text-slate-600 max-w-2xl mx-auto">Flexible models allowing institutions to scale executive tech leadership based on enrollment metrics and administrative density.</p>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">Flexible models allowing institutions to scale executive tech leadership based on enrollment metrics and administrative density. Choose the tier that matches your school's needs and budget.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
-                <div class="relative bg-blue-50/60 p-6 rounded-lg shadow-xl border-2 border-blue-600 hover:shadow-2xl transition transform md:-translate-y-4 z-10 flex flex-col">
-                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white text-[11px] font-extrabold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-md whitespace-nowrap">
-                        ★ Popular Choice ★
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Tier 1: Director-in-Residence (Popular) -->
+                <div class="relative bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg shadow-xl border-2 border-blue-600 hover:shadow-2xl transition flex flex-col">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white text-xs font-extrabold px-4 py-2 rounded-full uppercase tracking-wider shadow-md">
+                        ★ Most Popular ★
                     </div>
-                    <h3 class="font-bold text-xl mb-2 text-slate-900 mt-2">Tier 1: Edtech Director-in-Residence</h3>
+                    <h3 class="font-bold text-xl mb-2 text-slate-900 mt-4">Tier 1: Edtech Director-in-Residence</h3>
                     <p class="text-xs font-bold text-blue-600 mb-4 uppercase tracking-wider">The Anchor Level</p>
-                    <p class="text-sm text-slate-700 mb-4 font-semibold">A strategic bridge for schools prioritizing administrative innovation without the financial weight of a full-time executive.</p>
-                    <ul class="text-sm text-slate-700 space-y-2 mt-auto pt-4 border-t border-blue-200 list-disc pl-4">
-                        <li>2 or 3 days per week on-site</li>
-                        <li>Creation of human-centered AI and technology policies</li>
-                        <li>Weekly/bi-weekly instructional coaching</li>
-                        <li>Full management of user accounts and software lifecycles</li>
-                        <li>Up to 10 hours of virtual availability per month</li>
+                    <p class="text-sm text-slate-700 mb-6 font-semibold flex-grow">A strategic bridge for schools prioritizing administrative innovation and comprehensive tech leadership without the full financial commitment of a dedicated executive hire.</p>
+                    <ul class="text-sm text-slate-700 space-y-2 pt-4 border-t-2 border-blue-300 list-none pl-0">
+                        <li class="flex items-start mb-2">
+                            <span class="text-blue-600 mr-2 font-bold">•</span>
+                            <span>2 or 3 days per week on-site</span>
+                        </li>
+                        <li class="flex items-start mb-2">
+                            <span class="text-blue-600 mr-2 font-bold">•</span>
+                            <span>Creation of human-centered AI and technology policies</span>
+                        </li>
+                        <li class="flex items-start mb-2">
+                            <span class="text-blue-600 mr-2 font-bold">•</span>
+                            <span>Weekly/bi-weekly instructional coaching</span>
+                        </li>
+                        <li class="flex items-start mb-2">
+                            <span class="text-blue-600 mr-2 font-bold">•</span>
+                            <span>Full management of user accounts and software lifecycles</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-600 mr-2 font-bold">•</span>
+                            <span>Up to 10 hours of virtual availability per month</span>
+                        </li>
                     </ul>
                 </div>
 
-                <div class="bg-white p-6 rounded shadow border-t-4 border-slate-400 hover:shadow-lg transition flex flex-col mt-2 md:mt-0">
-                    <h3 class="font-bold text-xl mb-2 text-slate-900">Tier 2: Edtech Essentials for Support & Coaching</h3>
+                <!-- Tier 2: Essentials -->
+                <div class="bg-white p-6 rounded-lg shadow border-t-4 border-slate-400 hover:shadow-lg transition flex flex-col">
+                    <h3 class="font-bold text-xl mb-2 text-slate-900">Tier 2: Edtech Essentials</h3>
                     <p class="text-xs font-bold text-slate-500 mb-4 uppercase tracking-wider">Stability & Compliance</p>
-                    <p class="text-sm text-slate-600 mb-4 flex-grow">Designed for schools that need technical consistency and back-end health without requiring regular instructional innovation assistance.</p>
-                    <ul class="text-sm text-slate-700 space-y-2 mt-auto pt-4 border-t border-slate-100 list-disc pl-4">
-                        <li>1 day per week on-site</li>
-                        <li>Troubleshooting and safety log monitoring</li>
-                        <li>Monthly individualized faculty coaching</li>
-                        <li>Monthly faculty "Chat-n-Share" segments</li>
+                    <p class="text-sm text-slate-600 mb-6 flex-grow">Designed for schools that need technical consistency, back-end health, and troubleshooting support without requiring regular instructional innovation assistance.</p>
+                    <ul class="text-sm text-slate-700 space-y-2 pt-4 border-t border-slate-200 list-none pl-0">
+                        <li class="flex items-start mb-2">
+                            <span class="text-slate-400 mr-2 font-bold">•</span>
+                            <span>1 day per week on-site</span>
+                        </li>
+                        <li class="flex items-start mb-2">
+                            <span class="text-slate-400 mr-2 font-bold">•</span>
+                            <span>Troubleshooting and safety log monitoring</span>
+                        </li>
+                        <li class="flex items-start mb-2">
+                            <span class="text-slate-400 mr-2 font-bold">•</span>
+                            <span>Monthly individualized faculty coaching</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-slate-400 mr-2 font-bold">•</span>
+                            <span>Monthly faculty "Chat-n-Share" sessions</span>
+                        </li>
                     </ul>
                 </div>
 
-                <div class="bg-white p-6 rounded shadow border-t-4 border-yellow-500 hover:shadow-lg transition flex flex-col mt-2 md:mt-0">
-                    <h3 class="font-bold text-xl mb-2 text-slate-900">Tier 3: Strategic Edtech Professional Development</h3>
+                <!-- Tier 3: Professional Development -->
+                <div class="bg-white p-6 rounded-lg shadow border-t-4 border-yellow-500 hover:shadow-lg transition flex flex-col">
+                    <h3 class="font-bold text-xl mb-2 text-slate-900">Tier 3: Strategic PD</h3>
                     <p class="text-xs font-bold text-yellow-600 mb-4 uppercase tracking-wider">Faculty Upskilling</p>
-                    <p class="text-sm text-slate-600 mb-4 flex-grow">Emphasizes strategic alignment and the holistic empowerment of the academic community.</p>
-                    <ul class="text-sm text-slate-700 space-y-2 mt-auto pt-4 border-t border-slate-100 list-disc pl-4">
-                        <li>3 to 4 specialized professional development modules annually</li>
-                        <li>Dedicated office hours/follow-up days</li>
-                        <li>Annual Parent Education workshop</li>
+                    <p class="text-sm text-slate-600 mb-6 flex-grow">Emphasizes strategic alignment and holistic empowerment of the academic community through targeted professional development modules.</p>
+                    <ul class="text-sm text-slate-700 space-y-2 pt-4 border-t border-slate-200 list-none pl-0">
+                        <li class="flex items-start mb-2">
+                            <span class="text-yellow-500 mr-2 font-bold">•</span>
+                            <span>3-4 specialized PD modules annually</span>
+                        </li>
+                        <li class="flex items-start mb-2">
+                            <span class="text-yellow-500 mr-2 font-bold">•</span>
+                            <span>Dedicated office hours and follow-up days</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-yellow-500 mr-2 font-bold">•</span>
+                            <span>Annual Parent Education workshop</span>
+                        </li>
                     </ul>
                 </div>
 
-                <div class="bg-white p-6 rounded shadow border-t-4 border-slate-800 hover:shadow-lg transition flex flex-col mt-2 md:mt-0">
-                    <h3 class="font-bold text-xl mb-2 text-slate-900">Tier 4: Individual Training Sessions</h3>
+                <!-- Tier 4: Individual Training -->
+                <div class="bg-white p-6 rounded-lg shadow border-t-4 border-slate-800 hover:shadow-lg transition flex flex-col">
+                    <h3 class="font-bold text-xl mb-2 text-slate-900">Tier 4: Individual Training</h3>
                     <p class="text-xs font-bold text-slate-600 mb-4 uppercase tracking-wider">Targeted Intervention</p>
-                    <p class="text-sm text-slate-600 mb-4 flex-grow">Individualized sessions based on your school’s unique needs capped to ensure focused, actionable learning.</p>
-                    <ul class="text-sm text-slate-700 space-y-2 mt-auto pt-4 border-t border-slate-100 list-disc pl-4">
-                        <li>1.5-hour or 3-hour long PD formats</li>
-                        <li>Hands-on interactive blocks</li>
-                        <li>Two virtual follow-up sessions per training</li>
+                    <p class="text-sm text-slate-600 mb-6 flex-grow">Individualized sessions based on your school's unique needs, ensuring focused, actionable learning with ongoing support.</p>
+                    <ul class="text-sm text-slate-700 space-y-2 pt-4 border-t border-slate-200 list-none pl-0">
+                        <li class="flex items-start mb-2">
+                            <span class="text-slate-400 mr-2 font-bold">•</span>
+                            <span>1.5-hour or 3-hour training formats</span>
+                        </li>
+                        <li class="flex items-start mb-2">
+                            <span class="text-slate-400 mr-2 font-bold">•</span>
+                            <span>Hands-on interactive workshops</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-slate-400 mr-2 font-bold">•</span>
+                            <span>Two virtual follow-up sessions per training</span>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Professional Development Catalog -->
     <section id="pd" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-10 border-l-4 border-blue-600 pl-4">Professional Development Catalog</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4 border-l-4 border-blue-600 pl-4">Professional Development Catalog</h2>
+            <p class="text-lg text-slate-600 max-w-3xl mb-10">Our signature workshops address the most pressing pedagogical and technical challenges facing today's independent schools.</p>
+            
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="p-6 bg-slate-50 rounded border border-slate-200">
-                    <h4 class="text-lg font-bold text-blue-800 mb-2">The Organized Student (Executive Function)</h4>
-                    <p class="text-sm text-slate-600">Combats digital disorganization by embedding color-coded Chrome tab groups, standardized Google Drive backpack architectures, and visual checklists directly into weekly routines.</p>
+                <div class="p-6 bg-slate-50 rounded-lg border border-slate-200 hover:shadow-md transition">
+                    <h4 class="text-lg font-bold text-blue-800 mb-3">The Organized Student (Executive Function)</h4>
+                    <p class="text-sm text-slate-600">Combats digital disorganization by embedding color-coded Chrome tab groups, standardized Google Drive backpack architectures, visual checklists, and task management systems that reduce cognitive friction and promote student agency.</p>
                 </div>
-                <div class="p-6 bg-slate-50 rounded border border-slate-200">
-                    <h4 class="text-lg font-bold text-blue-800 mb-2">AI & Assistive Tech for Neurodiverse Learners</h4>
-                    <p class="text-sm text-slate-600">Targets learning friction by leveraging tools to atomize intimidating prompts into visible micro-steps, lowering cognitive load, and erasing accommodation stigmas.</p>
+                
+                <div class="p-6 bg-slate-50 rounded-lg border border-slate-200 hover:shadow-md transition">
+                    <h4 class="text-lg font-bold text-blue-800 mb-3">AI & Assistive Tech for Neurodiverse Learners</h4>
+                    <p class="text-sm text-slate-600">Targets learning friction by leveraging tools to atomize intimidating prompts into visible micro-steps, lowering cognitive load, and erasing accommodations barriers—ensuring equitable access for all learners.</p>
                 </div>
-                <div class="p-6 bg-slate-50 rounded border border-slate-200">
-                    <h4 class="text-lg font-bold text-blue-800 mb-2">Universal Accessibility Foundations</h4>
-                    <p class="text-sm text-slate-600">Bypasses reading bottlenecks by integrating the pre-installed literacy toolbars, native Chromebook OS shortcuts, and automated cloud distribution pipelines.</p>
+                
+                <div class="p-6 bg-slate-50 rounded-lg border border-slate-200 hover:shadow-md transition">
+                    <h4 class="text-lg font-bold text-blue-800 mb-3">Universal Accessibility Foundations</h4>
+                    <p class="text-sm text-slate-600">Bypasses reading bottlenecks by integrating pre-installed literacy toolbars, native Chromebook OS shortcuts, and automated cloud distribution workflows. Practical, low-cost solutions for maximum student reach.</p>
                 </div>
-                <div class="p-6 bg-slate-50 rounded border border-slate-200">
-                    <h4 class="text-lg font-bold text-blue-800 mb-2">Active Classrooms (Ditching Passive Screens)</h4>
-                    <p class="text-sm text-slate-600">Replaces uncritical "edu-tainment" with active learning by weaving real-time queries, interactive video models, and collaborative whiteboards seamlessly into standard lectures.</p>
+                
+                <div class="p-6 bg-slate-50 rounded-lg border border-slate-200 hover:shadow-md transition">
+                    <h4 class="text-lg font-bold text-blue-800 mb-3">Active Classrooms (Ditching Passive Screens)</h4>
+                    <p class="text-sm text-slate-600">Replaces uncritical "edu-tainment" with active learning by weaving real-time queries, interactive video models, and collaborative whiteboards seamlessly into rigorous curriculum delivery.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Contact / Consultation Section -->
     <section id="contact" class="py-20 bg-slate-900 text-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-slate-800 p-8 md:p-12 rounded-xl shadow-2xl border border-slate-700">
                 <div class="text-center mb-8">
-                    <h2 class="text-3xl font-bold mb-4">Start the Conversation</h2>
-                    <p class="text-slate-300">Are you navigating a complex digital transformation or managing enrollment-based budget adjustments? Let’s build a cost-effective technology roadmap.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Start the Conversation</h2>
+                    <p class="text-slate-300 text-lg">Are you navigating a complex digital transformation or managing enrollment-based budget adjustments? Let's build a cost-effective technology roadmap that serves your school's unique mission.</p>
                 </div>
                 
-                <form action="#" method="POST" class="space-y-6">
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-sm font-medium text-slate-300 mb-1">Full Name</label>
-                            <input type="text" class="w-full px-4 py-2 rounded bg-slate-700 border border-slate-600 text-white focus:outline-none focus:border-blue-500" placeholder="Jane Doe">
+                            <label for="name" class="block text-sm font-medium text-slate-300 mb-2">Full Name <span class="text-red-400">*</span></label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-2 rounded bg-slate-700 border border-slate-600 text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500" placeholder="Jane Doe">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-slate-300 mb-1">Institutional Email</label>
-                            <input type="email" class="w-full px-4 py-2 rounded bg-slate-700 border border-slate-600 text-white focus:outline-none focus:border-blue-500" placeholder="jane@yourschool.edu">
+                            <label for="email" class="block text-sm font-medium text-slate-300 mb-2">Institutional Email <span class="text-red-400">*</span></label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-2 rounded bg-slate-700 border border-slate-600 text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500" placeholder="jane@yourschool.edu">
                         </div>
                     </div>
+                    
                     <div>
-                        <label class="block text-sm font-medium text-slate-300 mb-1">My Role Is:</label>
-                        <select class="w-full px-4 py-2 rounded bg-slate-700 border border-slate-600 text-white focus:outline-none focus:border-blue-500">
-                            <option>Head of School</option>
-                            <option>Business Officer / CFO</option>
-                            <option>Board Trustee</option>
-                            <option>Division Coordinator</option>
-                            <option>Other Administrator</option>
+                        <label for="school" class="block text-sm font-medium text-slate-300 mb-2">School Name <span class="text-red-400">*</span></label>
+                        <input type="text" id="school" name="school" required class="w-full px-4 py-2 rounded bg-slate-700 border border-slate-600 text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500" placeholder="Your School Name">
+                    </div>
+                    
+                    <div>
+                        <label for="role" class="block text-sm font-medium text-slate-300 mb-2">My Role Is: <span class="text-red-400">*</span></label>
+                        <select id="role" name="role" required class="w-full px-4 py-2 rounded bg-slate-700 border border-slate-600 text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500">
+                            <option value="">-- Select a role --</option>
+                            <option value="Head of School">Head of School</option>
+                            <option value="Business Officer / CFO">Business Officer / CFO</option>
+                            <option value="Technology Director">Technology Director</option>
+                            <option value="Board Trustee">Board Trustee</option>
+                            <option value="Division Coordinator">Division Coordinator</option>
+                            <option value="Faculty Member">Faculty Member</option>
+                            <option value="Other Administrator">Other Administrator</option>
                         </select>
                     </div>
+                    
                     <div>
-                        <label class="block text-sm font-medium text-slate-300 mb-1">How can Carolina EdTech support your mission?</label>
-                        <textarea rows="4" class="w-full px-4 py-2 rounded bg-slate-700 border border-slate-600 text-white focus:outline-none focus:border-blue-500" placeholder="Tell us about your current digital infrastructure or PD goals..."></textarea>
+                        <label for="message" class="block text-sm font-medium text-slate-300 mb-2">How can Carolina EdTech support your mission? <span class="text-red-400">*</span></label>
+                        <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2 rounded bg-slate-700 border border-slate-600 text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500" placeholder="Tell us about your current technology challenges, goals, or areas where you need support..."></textarea>
                     </div>
-                    <button type="button" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-4 rounded transition shadow-lg">
+                    
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white font-bold py-3 px-4 rounded transition shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-300">
                         Request Strategy Consultation
                     </button>
                     
                     <div class="mt-6 p-4 bg-slate-700 rounded border border-blue-500/30 text-center">
-                        <p class="text-sm text-slate-300 mb-2">Not ready for a call? Download our free resource:</p>
-                        <a href="#" class="text-blue-400 font-semibold hover:text-blue-300 underline text-sm">The SCISA Administrator’s Guide to Digital Audits (PDF)</a>
+                        <p class="text-sm text-slate-300 mb-3">Not ready for a consultation? We're here to help when you are.</p>
+                        <p class="text-xs text-slate-400">Required fields are marked with <span class="text-red-400">*</span></p>
                     </div>
                 </form>
             </div>
         </div>
     </section>
 
-    <footer class="bg-black text-slate-400 py-8 text-center text-sm">
-        <div class="max-w-7xl mx-auto px-4">
-            <p class="mb-2">&copy; 2026 Carolina EdTech. All rights reserved.</p>
-            <p>Providing independent school technology consulting, Edtech Director-in-Residence partnerships, and SCISA/PAIS professional development across South Carolina.</p>
+    <!-- Footer -->
+    <footer class="bg-black text-slate-400 py-8 border-t border-slate-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-white font-bold mb-3">Carolina EdTech</h3>
+                    <p class="text-sm">Strategic technology consulting and professional development for independent schools across the Southeast.</p>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold mb-3">Services</h3>
+                    <ul class="text-sm space-y-1">
+                        <li><a href="#services" class="hover:text-blue-400 transition">Director-in-Residence</a></li>
+                        <li><a href="#services" class="hover:text-blue-400 transition">Professional Development</a></li>
+                        <li><a href="#services" class="hover:text-blue-400 transition">Consulting</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold mb-3">Quick Links</h3>
+                    <ul class="text-sm space-y-1">
+                        <li><a href="#contact" class="hover:text-blue-400 transition">Get Started</a></li>
+                        <li><a href="#advantage" class="hover:text-blue-400 transition">Our Approach</a></li>
+                        <li><a href="#philosophy" class="hover:text-blue-400 transition">Philosophy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-700 pt-6 text-center text-sm">
+                <p class="mb-2">&copy; 2026 Carolina EdTech. All rights reserved.</p>
+                <p>Providing independent school technology consulting, Edtech Director-in-Residence partnerships, and SCISA/PAIS professional development across South Carolina and the Southeast.</p>
+            </div>
         </div>
     </footer>
 
