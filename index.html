@@ -82,6 +82,18 @@
             transform: scale(1.05);
         }
         
+        /* Rotating content fade animation */
+        .rotating-content {
+            animation: fadeInOut 1s ease-in-out;
+        }
+        
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+        
         /* Print styles */
         @media print {
             nav, footer {
@@ -92,7 +104,7 @@
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased">
 
-    <!-- Mobile Menu Button Script -->
+    <!-- Mobile Menu Button Script & Rotating Content Script -->
     <script>
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
@@ -100,6 +112,64 @@
             menu.classList.toggle('active');
             button.setAttribute('aria-expanded', menu.classList.contains('active'));
         }
+
+        // Rotating headline and sub-headline options
+        const titleOptions = [
+            {
+                headline: "Augmentation, Not Automation.",
+                subheadline: "Technology should never drive the bus. At Carolina EdTech, we equip schools with the strategic guardrails and coaching to ensure digital platforms remain what they are: powerful tools guided by skilled hands and 100% human oversight."
+            },
+            {
+                headline: "Technology Doesn't Teach. Teachers Do.",
+                subheadline: "We provide fractional EdTech leadership that puts technology in its proper place—behind the educator. We help schools weave digital tools seamlessly into existing lessons to amplify human connection, never replace it."
+            },
+            {
+                headline: "Smart Tools Require Skilled Hands.",
+                subheadline: "A hammer can build a house or break a window, depending on who holds it. At Carolina EdTech, our philosophy is simple: Augmentation, Not Automation. We train educators and students to wield technology as an adaptive, purposeful toolkit to elevate learning."
+            },
+            {
+                headline: "Smart Tools. Skilled Hands. Human Heart.",
+                subheadline: "Carolina EdTech provides the strategic leadership to ensure your school's technology augments human potential rather than automating it away."
+            },
+            {
+                headline: "Empowering the Human Element of Learning.",
+                subheadline: "From multi-sensory alternative assessments to school-wide AI guardrails. Carolina EdTech champions Augmentation, Not Automation, ensuring your digital infrastructure serves your faculty and students—not the other way around."
+            }
+        ];
+
+        let currentTitleIndex = 0;
+
+        function rotateHeroContent() {
+            const heroHeadline = document.getElementById('hero-headline');
+            const heroSubheadline = document.getElementById('hero-subheadline');
+            
+            if (heroHeadline && heroSubheadline) {
+                // Add fade animation
+                heroHeadline.classList.remove('rotating-content');
+                heroSubheadline.classList.remove('rotating-content');
+                
+                // Trigger reflow to restart animation
+                void heroHeadline.offsetWidth;
+                void heroSubheadline.offsetWidth;
+                
+                // Add fade animation
+                heroHeadline.classList.add('rotating-content');
+                heroSubheadline.classList.add('rotating-content');
+                
+                // Update content
+                heroHeadline.textContent = titleOptions[currentTitleIndex].headline;
+                heroSubheadline.textContent = titleOptions[currentTitleIndex].subheadline;
+                
+                // Increment index for next rotation
+                currentTitleIndex = (currentTitleIndex + 1) % titleOptions.length;
+            }
+        }
+
+        // Start rotation when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            rotateHeroContent(); // Show first option immediately
+            setInterval(rotateHeroContent, 45000); // Then rotate every 45 seconds
+        });
     </script>
 
     <!-- Navigation -->
@@ -174,12 +244,11 @@
     <!-- Hero Header -->
     <header class="hero-bg text-white py-24 md:py-32 border-b-8 border-blue-600">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
-            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
-                Technology Must Never Drive the Bus.<br>
-                <span class="text-blue-400">We Provide the Wisdom to Use It Well.</span>
+            <h1 id="hero-headline" class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+                Augmentation, Not Automation.
             </h1>
-            <p class="text-lg md:text-2xl mb-10 max-w-3xl text-slate-200">
-                Tailored Edtech Director-in-Residence partnerships, mission-aligned assistive technology architectures, and human-centered AI integration designed exclusively for independent and preparatory schools across the Southeast.
+            <p id="hero-subheadline" class="text-lg md:text-2xl mb-10 max-w-3xl text-slate-200">
+                Technology should never drive the bus. At Carolina EdTech, we equip schools with the strategic guardrails and coaching to ensure digital platforms remain what they are: powerful tools guided by skilled hands and 100% human oversight.
             </p>
             <a href="#contact" class="inline-block bg-blue-600 hover:bg-blue-500 text-white text-lg px-8 py-4 rounded font-bold transition shadow-xl border border-blue-400">
                 Request Institutional Strategy Consultation
@@ -200,21 +269,21 @@
                 <div class="bg-slate-50 p-8 rounded-lg shadow border-t-4 border-slate-800 hover:shadow-lg transition">
                     <h3 class="text-xl font-bold mb-3 text-slate-900">1. Pedagogical Rooting</h3>
                     <p class="text-slate-600 font-semibold mb-4">15-Year Classroom Veteran</p>
-                    <p class="text-slate-600 text-sm">Grounded in 15 years of traditional Latin pedagogy and classical education principles. I speak the language of your most veteran faculty members, demonstrating how technology can enhance—not replace—rigorous academic standards and time-honored teaching methods.</p>
+                    <p class="text-slate-600 text-sm">Grounded in 15 years of traditional Latin pedagogy and classical education principles. I speak the language of your most veteran faculty members, bridging classical methodology with intentional technology integration.</p>
                 </div>
                 
                 <!-- Advantage 2: Administrative -->
                 <div class="bg-slate-50 p-8 rounded-lg shadow border-t-4 border-yellow-500 hover:shadow-lg transition">
                     <h3 class="text-xl font-bold mb-3 text-slate-900">2. Administrative Excellence</h3>
                     <p class="text-slate-600 font-semibold mb-4">NBOA Award Winner</p>
-                    <p class="text-slate-600 text-sm">Recipient of the National Business Officers Association Professional Achievement Award. Every digital strategy is designed to align strictly with your school's mission, values, and fiscal stewardship principles while maximizing ROI on technology investments.</p>
+                    <p class="text-slate-600 text-sm">Recipient of the National Business Officers Association Professional Achievement Award. Every digital strategy is designed to align strictly with your mission, fiduciary responsibility, and enrollment-based budgeting constraints.</p>
                 </div>
                 
                 <!-- Advantage 3: Technical -->
                 <div class="bg-slate-50 p-8 rounded-lg shadow border-t-4 border-blue-600 hover:shadow-lg transition">
                     <h3 class="text-xl font-bold mb-3 text-slate-900">3. Technical Mastery</h3>
                     <p class="text-slate-600 font-semibold mb-4">Google for Education Trainer</p>
-                    <p class="text-slate-600 text-sm">One of only 7 certified experts within a 50-mile radius of the Lowcountry. Expert in architecture, implementation, and optimization of the digital ecosystems that power modern independent schools—from infrastructure to classroom integration.</p>
+                    <p class="text-slate-600 text-sm">One of only 7 certified experts within a 50-mile radius of the Lowcountry. Expert in architecture, implementation, and optimization of the digital ecosystem serving PreK-12 independent schools.</p>
                 </div>
             </div>
         </div>
@@ -226,20 +295,20 @@
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
                     <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-400">Our Philosophy: Augmentation, Not Automation</h2>
-                    <p class="mb-4 text-slate-300">We firmly believe technology represents a specialized toolbox to be handled by intentional human hands. The instructor's academic material and intellectual leadership must never be sacrificed for the sake of technological novelty. Instead, technology should amplify pedagogical excellence.</p>
+                    <p class="mb-4 text-slate-300">We firmly believe technology represents a specialized toolbox to be handled by intentional human hands. The instructor's academic material and intellectual authority must remain at the center. Digital tools amplify; they never replace.</p>
                     <ul class="space-y-6 mt-8">
                         <li class="flex items-start">
                             <span class="text-yellow-500 mr-3 text-xl font-bold" aria-hidden="true">✓</span>
                             <div>
                                 <strong class="block text-lg mb-2">The Digital Education Toolbox</strong>
-                                <span class="text-slate-300 text-sm">Think of classroom technology as you would a student who has a really cool set of colored pencils. They wouldn't just use those colored pencils in one special "art class," right? They'd use them to color pictures in their science notebook, draw maps in social studies, and even make their math problems look clearer!<br><br>Digital tools are like those special colored pencils for learning in the 21st century. Here are some reasons why it's better to integrate into their regular classes and not just in a separate computer class, as recommended by the International Society for Technology in Education (ISTE), a leading non-profit organization that sets the nationally and globally recognized "gold standard" for the effective integration of technology to transform teaching and learning.</span>
+                                <span class="text-slate-300 text-sm">Think of classroom technology as you would a student who has a really cool set of colored pencils. They wouldn't just use those colored pencils for every assignment. The pencils are a tool. And like any tool, they're only as valuable as the hands that wield them.</span>
                             </div>
                         </li>
                         <li class="flex items-start">
                             <span class="text-yellow-500 mr-3 text-xl font-bold" aria-hidden="true">✓</span>
                             <div>
                                 <strong class="block text-lg">Ditching Passive Edu-tainment</strong>
-                                <span class="text-slate-400 text-sm">We strictly oppose uncritical digital downtime. Activities must be structured, teacher-led, and purposefully mapped to rigorous learning objectives with measurable outcomes for student mastery.</span>
+                                <span class="text-slate-400 text-sm">We strictly oppose uncritical digital downtime. Activities must be structured, teacher-led, and purposefully mapped to rigorous learning outcomes. AI assistants are helpful research partners—never replacements for human instruction and assessment.</span>
                             </div>
                         </li>
                     </ul>
@@ -263,7 +332,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Engagement Tiers</h2>
-                <p class="text-lg text-slate-600 max-w-2xl mx-auto">Flexible models allowing institutions to scale executive tech leadership based on enrollment metrics and administrative density. Choose the tier that matches your school's needs and budget.</p>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">Flexible models allowing institutions to scale executive tech leadership based on enrollment metrics and administrative density. Choose what fits.</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -274,7 +343,7 @@
                     </div>
                     <h3 class="font-bold text-xl mb-2 text-slate-900 mt-4">Tier 1: Edtech Director-in-Residence</h3>
                     <p class="text-xs font-bold text-blue-600 mb-4 uppercase tracking-wider">The Anchor Level</p>
-                    <p class="text-sm text-slate-700 mb-6 font-semibold flex-grow">A strategic bridge for schools prioritizing administrative innovation and comprehensive tech leadership without the full financial commitment of a dedicated executive hire.</p>
+                    <p class="text-sm text-slate-700 mb-6 font-semibold flex-grow">A strategic bridge for schools prioritizing administrative innovation and comprehensive tech leadership without the full-time overhead.</p>
                     <ul class="text-sm text-slate-700 space-y-2 pt-4 border-t-2 border-blue-300 list-none pl-0">
                         <li class="flex items-start mb-2">
                             <span class="text-blue-600 mr-2 font-bold">•</span>
@@ -303,7 +372,7 @@
                 <div class="bg-white p-6 rounded-lg shadow border-t-4 border-slate-400 hover:shadow-lg transition flex flex-col">
                     <h3 class="font-bold text-xl mb-2 text-slate-900">Tier 2: Edtech Essentials</h3>
                     <p class="text-xs font-bold text-slate-500 mb-4 uppercase tracking-wider">Stability & Compliance</p>
-                    <p class="text-sm text-slate-600 mb-6 flex-grow">Designed for schools that need technical consistency, back-end health, and troubleshooting support without requiring regular instructional innovation assistance.</p>
+                    <p class="text-sm text-slate-600 mb-6 flex-grow">Designed for schools that need technical consistency, back-end health, and troubleshooting support without requiring regular instructional coaching.</p>
                     <ul class="text-sm text-slate-700 space-y-2 pt-4 border-t border-slate-200 list-none pl-0">
                         <li class="flex items-start mb-2">
                             <span class="text-slate-400 mr-2 font-bold">•</span>
@@ -378,22 +447,22 @@
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="p-6 bg-slate-50 rounded-lg border border-slate-200 hover:shadow-md transition">
                     <h4 class="text-lg font-bold text-blue-800 mb-3">The Organized Student (Executive Function)</h4>
-                    <p class="text-sm text-slate-600">Combats digital disorganization by embedding color-coded Chrome tab groups, standardized Google Drive backpack architectures, visual checklists, and task management systems that reduce cognitive friction and promote student agency.</p>
+                    <p class="text-sm text-slate-600">Combats digital disorganization by embedding color-coded Chrome tab groups, standardized Google Drive backpack architectures, visual checklists, and end-of-day assignment audits. Students move from overwhelm to organized productivity.</p>
                 </div>
                 
                 <div class="p-6 bg-slate-50 rounded-lg border border-slate-200 hover:shadow-md transition">
                     <h4 class="text-lg font-bold text-blue-800 mb-3">AI & Assistive Tech for Neurodiverse Learners</h4>
-                    <p class="text-sm text-slate-600">Targets learning friction by leveraging tools to atomize intimidating prompts into visible micro-steps, lowering cognitive load, and erasing accommodations barriers—ensuring equitable access for all learners.</p>
+                    <p class="text-sm text-slate-600">Targets learning friction by leveraging tools to atomize intimidating prompts into visible micro-steps, lowering cognitive load, and erasing accommodation stigma. Accessible learning is invisible learning.</p>
                 </div>
                 
                 <div class="p-6 bg-slate-50 rounded-lg border border-slate-200 hover:shadow-md transition">
                     <h4 class="text-lg font-bold text-blue-800 mb-3">Universal Accessibility Foundations</h4>
-                    <p class="text-sm text-slate-600">Bypasses reading bottlenecks by integrating pre-installed literacy toolbars, native Chromebook OS shortcuts, and automated cloud distribution workflows. Practical, low-cost solutions for maximum student reach.</p>
+                    <p class="text-sm text-slate-600">Bypasses reading bottlenecks by integrating pre-installed literacy toolbars, native Chromebook OS shortcuts, and automated cloud distribution workflows. Removes friction for students with dyslexia, vision challenges, and processing delays.</p>
                 </div>
                 
                 <div class="p-6 bg-slate-50 rounded-lg border border-slate-200 hover:shadow-md transition">
                     <h4 class="text-lg font-bold text-blue-800 mb-3">Active Classrooms (Ditching Passive Screens)</h4>
-                    <p class="text-sm text-slate-600">Replaces uncritical "edu-tainment" with active learning by weaving real-time queries, interactive video models, and collaborative whiteboards seamlessly into rigorous curriculum delivery.</p>
+                    <p class="text-sm text-slate-600">Replaces uncritical "edu-tainment" with active learning by weaving real-time queries, interactive video models, and collaborative whiteboards seamlessly into existing lesson structures. Technology serves pedagogy, not vice versa.</p>
                 </div>
             </div>
         </div>
@@ -405,29 +474,29 @@
             <div class="bg-slate-800 p-8 md:p-12 rounded-xl shadow-2xl border border-slate-700">
                 <div class="text-center mb-8">
                     <h2 class="text-3xl md:text-4xl font-bold mb-4">Start the Conversation</h2>
-                    <p class="text-slate-300 text-lg">Are you navigating a complex digital transformation or managing enrollment-based budget adjustments? Let's build a cost-effective technology roadmap that serves your school's unique mission.</p>
+                    <p class="text-slate-300 text-lg">Are you navigating a complex digital transformation or managing enrollment-based budget adjustments? Let's build a cost-effective technology roadmap grounded in your mission.</p>
                 </div>
                 
                 <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label for="name" class="block text-sm font-medium text-slate-300 mb-2">Full Name <span class="text-red-400">*</span></label>
-                            <input type="text" id="name" name="name" required class="w-full px-4 py-2 rounded bg-slate-700 border border-slate-600 text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500" placeholder="Jane Doe">
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-2 rounded bg-slate-700 border border-slate-600 text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-400/50 placeholder-slate-400">
                         </div>
                         <div>
                             <label for="email" class="block text-sm font-medium text-slate-300 mb-2">Institutional Email <span class="text-red-400">*</span></label>
-                            <input type="email" id="email" name="email" required class="w-full px-4 py-2 rounded bg-slate-700 border border-slate-600 text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500" placeholder="jane@yourschool.edu">
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-2 rounded bg-slate-700 border border-slate-600 text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-400/50 placeholder-slate-400">
                         </div>
                     </div>
                     
                     <div>
                         <label for="school" class="block text-sm font-medium text-slate-300 mb-2">School Name <span class="text-red-400">*</span></label>
-                        <input type="text" id="school" name="school" required class="w-full px-4 py-2 rounded bg-slate-700 border border-slate-600 text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500" placeholder="Your School Name">
+                        <input type="text" id="school" name="school" required class="w-full px-4 py-2 rounded bg-slate-700 border border-slate-600 text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-400/50 placeholder-slate-400">
                     </div>
                     
                     <div>
                         <label for="role" class="block text-sm font-medium text-slate-300 mb-2">My Role Is: <span class="text-red-400">*</span></label>
-                        <select id="role" name="role" required class="w-full px-4 py-2 rounded bg-slate-700 border border-slate-600 text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500">
+                        <select id="role" name="role" required class="w-full px-4 py-2 rounded bg-slate-700 border border-slate-600 text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-400/50">
                             <option value="">-- Select a role --</option>
                             <option value="Head of School">Head of School</option>
                             <option value="Business Officer / CFO">Business Officer / CFO</option>
@@ -441,10 +510,10 @@
                     
                     <div>
                         <label for="message" class="block text-sm font-medium text-slate-300 mb-2">How can Carolina EdTech support your mission? <span class="text-red-400">*</span></label>
-                        <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2 rounded bg-slate-700 border border-slate-600 text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500" placeholder="Tell us about your current technology challenges, goals, or areas where you need support..."></textarea>
+                        <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2 rounded bg-slate-700 border border-slate-600 text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-400/50 placeholder-slate-400"></textarea>
                     </div>
                     
-                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white font-bold py-3 px-4 rounded transition shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-300">
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white font-bold py-3 px-4 rounded transition shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400">
                         Request Strategy Consultation
                     </button>
                     
