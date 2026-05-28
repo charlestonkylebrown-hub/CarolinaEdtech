@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Development | Carolina EdTech</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;1,300&family=Open+Sans:wght@400;600&display=swap');
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Merriweather', serif; }
+        .logo-icon { transition: transform 0.3s ease; }
+        .logo-icon:hover { transform: scale(1.1); }
+        .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .mobile-menu.active { max-height: 300px; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+<script>
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('active');
+    }
+</script>
+
+<nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20 items-center">
+            <a href="index.html" class="flex items-center space-x-3 hover:opacity-80 transition">
+                <img src="tead.png" alt="Carolina EdTech Logo" class="logo-icon w-12 h-12 rounded-full border border-slate-600/50">
+                <div class="hidden sm:block">
+                    <span class="font-serif text-xl font-bold tracking-wide">Carolina</span>
+                    <span class="font-serif text-xl font-bold tracking-wide text-blue-400">EdTech</span>
+                </div>
+            </a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html" class="hover:text-blue-400 transition">Home</a>
+                <a href="services.html" class="hover:text-blue-400 transition">Executive Tiers</a>
+                <a href="pd.html" class="text-blue-400 font-semibold transition">Professional Development</a>
+                <a href="contact.html" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2 rounded-md font-semibold transition shadow-lg">Start Consultation</a>
+            </div>
+            <button id="menu-button" class="md:hidden flex flex-col space-y-1 focus:outline-none" onclick="toggleMobileMenu()">
+                <span class="w-6 h-1 bg-white rounded"></span>
+                <span class="w-6 h-1 bg-white rounded"></span>
+                <span class="w-6 h-1 bg-white rounded"></span>
+            </button>
+        </div>
+        <div id="mobile-menu" class="mobile-menu md:hidden pb-4">
+            <a href="index.html" class="block py-2 px-4 hover:bg-slate-800 rounded transition">Home</a>
+            <a href="services.html" class="block py-2 px-4 hover:bg-slate-800 rounded transition">Executive Tiers</a>
+            <a href="pd.html" class="block py-2 px-4 text-blue-400 font-semibold rounded">Professional Development</a>
+            <a href="contact.html" class="block py-2 px-4 bg-blue-600 hover:bg-blue-500 rounded transition font-semibold mt-2">Start Consultation</a>
+        </div>
+    </div>
+</nav>
+
+<section class="py-20 bg-white min-h-screen">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4 border-l-4 border-blue-600 pl-4">Professional Development Plans</h1>
+            <p class="text-lg text-slate-600 max-w-3xl">Our engagements are designed to cultivate ethical digital agency while offering robust support for faculty implementation.</p>
+        </div>
+
+        <div class="space-y-12">
+            <div class="bg-slate-50 p-8 rounded-lg border border-slate-200 shadow-sm">
+                <h3 class="text-2xl font-bold text-blue-900 mb-4">Option 1: Year-Long Development and Faculty Coaching</h3>
+                <p class="text-slate-600 mb-6">Crafted for organizations possessing a mature technical infrastructure, this emphasizes strategic alignment and the empowerment of the entire academic community through specialized modules targeting Digital Executive Functioning, Assistive Technology, and Responsible AI Use.</p>
+                <div class="grid md:grid-cols-2 gap-8 mb-6">
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-2">Program Components:</h4>
+                        <ul class="space-y-2 text-sm text-slate-600 list-disc list-inside">
+                            <li>Hands-on intensive PD modules distributed throughout the year.</li>
+                            <li>Customized "Teacher Action Plans" with sustained on-site and virtual follow-ups.</li>
+                            <li>High-level administrative partnership bridging institutional mission and digital progress.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-2">Investment Levels (Aug-May):</h4>
+                        <div class="bg-white p-4 rounded border border-slate-200 mb-3">
+                            <div class="font-bold text-blue-700">$2,000 / month</div>
+                            <div class="text-sm text-slate-600">2 in-person PD sessions per quarter, 3 on-site follow-ups, 4 virtual follow-ups.</div>
+                        </div>
+                        <div class="bg-white p-4 rounded border border-slate-200">
+                            <div class="font-bold text-blue-700">$1,500 / month</div>
+                            <div class="text-sm text-slate-600">1 in-person PD session per quarter, 3 on-site follow-ups, 4 virtual follow-ups.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-50 p-8 rounded-lg border border-slate-200 shadow-sm">
+                <h3 class="text-2xl font-bold text-blue-900 mb-2">Option 2: Individual Training Sessions</h3>
+                <p class="text-slate-600 mb-6">Excellent tactical additions for institutions already possessing mature infrastructure. We teach your teachers how to effectively wield specific tools. (Note: For strategic guardrails like data privacy policies, a Tier 1 engagement is recommended.) <strong class="text-blue-800 block mt-2"> *Session sizes are limited to 20 people.</strong></p>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded border border-slate-200 text-center">
+                        <h4 class="font-bold text-slate-800 mb-2">Individual Session</h4>
+                        <p class="text-sm text-slate-500 mb-3">1 - 1.5 Contact Hours</p>
+                        <div class="text-2xl font-bold text-blue-700 mb-3">$1,500</div>
+                        <p class="text-xs text-slate-600">Includes in-person course with 14 days of asynchronous follow-ups.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded border border-slate-200 text-center border-t-4 border-t-blue-500">
+                        <h4 class="font-bold text-slate-800 mb-2">Half-Day Block</h4>
+                        <p class="text-sm text-slate-500 mb-3">3 Contact Hours</p>
+                        <div class="text-2xl font-bold text-blue-700 mb-3">$2,800</div>
+                        <p class="text-xs text-slate-600">Includes in-person course, 30 min virtual follow-up, and 30 days asynchronous support.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded border border-slate-200 text-center">
+                        <h4 class="font-bold text-slate-800 mb-2">Full-Day Block</h4>
+                        <p class="text-sm text-slate-500 mb-3">6 Contact Hours</p>
+                        <div class="text-2xl font-bold text-blue-700 mb-3">$4,500</div>
+                        <p class="text-xs text-slate-600">Includes in-person course, 60 min virtual follow-ups, and 60 days asynchronous support.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-black text-slate-400 py-8 border-t border-slate-700 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+        <p class="mb-2">&copy; 2026 Carolina EdTech. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>

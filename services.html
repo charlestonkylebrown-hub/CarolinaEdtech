@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Tiers | Carolina EdTech</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;1,300&family=Open+Sans:wght@400;600&display=swap');
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Merriweather', serif; }
+        .logo-icon { transition: transform 0.3s ease; }
+        .logo-icon:hover { transform: scale(1.1); }
+        .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .mobile-menu.active { max-height: 300px; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+<script>
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('active');
+    }
+</script>
+
+<nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20 items-center">
+            <a href="index.html" class="flex items-center space-x-3 hover:opacity-80 transition">
+                <img src="tead.png" alt="Carolina EdTech Logo" class="logo-icon w-12 h-12 rounded-full border border-slate-600/50">
+                <div class="hidden sm:block">
+                    <span class="font-serif text-xl font-bold tracking-wide">Carolina</span>
+                    <span class="font-serif text-xl font-bold tracking-wide text-blue-400">EdTech</span>
+                </div>
+            </a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html" class="hover:text-blue-400 transition">Home</a>
+                <a href="services.html" class="text-blue-400 font-semibold transition">Executive Tiers</a>
+                <a href="pd.html" class="hover:text-blue-400 transition">Professional Development</a>
+                <a href="contact.html" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2 rounded-md font-semibold transition shadow-lg">Start Consultation</a>
+            </div>
+            <button id="menu-button" class="md:hidden flex flex-col space-y-1 focus:outline-none" onclick="toggleMobileMenu()">
+                <span class="w-6 h-1 bg-white rounded"></span>
+                <span class="w-6 h-1 bg-white rounded"></span>
+                <span class="w-6 h-1 bg-white rounded"></span>
+            </button>
+        </div>
+        <div id="mobile-menu" class="mobile-menu md:hidden pb-4">
+            <a href="index.html" class="block py-2 px-4 hover:bg-slate-800 rounded transition">Home</a>
+            <a href="services.html" class="block py-2 px-4 text-blue-400 font-semibold rounded">Executive Tiers</a>
+            <a href="pd.html" class="block py-2 px-4 hover:bg-slate-800 rounded transition">Professional Development</a>
+            <a href="contact.html" class="block py-2 px-4 bg-blue-600 hover:bg-blue-500 rounded transition font-semibold mt-2">Start Consultation</a>
+        </div>
+    </div>
+</nav>
+
+<section class="py-20 bg-slate-50 min-h-screen">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Executive Service Options</h1>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto">Flexible fractional leadership models allowing institutions to scale executive tech oversight based on institutional needs.</p>
+        </div>
+
+        <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="relative bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-lg shadow-xl border-2 border-blue-600 flex flex-col">
+                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white text-xs font-extrabold px-4 py-2 rounded-full uppercase">★ Anchor Level ★</div>
+                <h3 class="font-bold text-2xl mb-2 text-slate-900 mt-4">Tier 1: Edtech Director-in-Residence</h3>
+                <p class="text-sm text-slate-700 mb-6 flex-grow">A strategic, fractional leadership model for administrative-level innovation and specialized technology coaching.</p>
+                <ul class="text-sm text-slate-700 space-y-3 pt-4 border-t-2 border-blue-300">
+                    <li><strong class="text-blue-600">• Time Commitment:</strong> 2 days per week (8 days/mo) on-site; 20 hours off-site.</li>
+                    <li><strong class="text-blue-600">• Ethical Governance:</strong> Creation of human-centered tech & AI policies.</li>
+                    <li><strong class="text-blue-600">• Instructional Integration:</strong> Monthly dedicated 1-on-1 or small group coaching.</li>
+                    <li><strong class="text-blue-600">• Professional Development:</strong> Includes 2 individual sessions or one 3-hour course per year, plus a 25% discount on additional courses.</li>
+                    <li><strong class="text-blue-600">• Lifecycle Management:</strong> Full management of user accounts, licenses, and audits.</li>
+                </ul>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow border-t-4 border-slate-400 flex flex-col">
+                <h3 class="font-bold text-2xl mb-2 text-slate-900">Tier 2: Edtech Partner</h3>
+                <p class="text-xs font-bold text-slate-500 mb-4 uppercase">Premium Level</p>
+                <p class="text-sm text-slate-600 mb-6 flex-grow">Fractional leadership and expert coaching providing executive-level guidance without full-time costs.</p>
+                <ul class="text-sm text-slate-700 space-y-3 pt-4 border-t border-slate-200">
+                    <li><strong class="text-slate-400">• Time Commitment:</strong> 1 day per week (4 days/mo) on-site; 20 hours off-site.</li>
+                    <li><strong class="text-slate-400">• Administrative Partnership:</strong> Alignment of tech with institutional goals.</li>
+                    <li><strong class="text-slate-400">• Instructional Integration:</strong> Monthly 1-on-1 or small group instructional coaching.</li>
+                    <li><strong class="text-slate-400">• PD Savings:</strong> 20% discount on all full professional development training.</li>
+                    <li><strong class="text-slate-400">• Lifecycle Management:</strong> User account and license renewal management.</li>
+                </ul>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow border-t-4 border-yellow-500 flex flex-col">
+                <h3 class="font-bold text-2xl mb-2 text-slate-900">Tier 3: Edtech Specialist</h3>
+                <p class="text-xs font-bold text-yellow-600 mb-4 uppercase">Operational Stability</p>
+                <p class="text-sm text-slate-600 mb-6 flex-grow">Designed for schools needing technical consistency and back-end health to ensure essential digital infrastructure remains functional and secure.</p>
+                <ul class="text-sm text-slate-700 space-y-3 pt-4 border-t border-slate-200">
+                    <li><strong class="text-yellow-500">• Time Commitment:</strong> 3 days per month on-site; up to 10 hours off-site.</li>
+                    <li><strong class="text-yellow-500">• Managed Upkeep:</strong> Hardware/software troubleshooting, account management.</li>
+                    <li><strong class="text-yellow-500">• Individualized Sessions:</strong> Monthly 1-on-1 coaching for enhanced student engagement.</li>
+                    <li><strong class="text-yellow-500">• PD Savings:</strong> 10% discount on full professional development courses.</li>
+                    <li><strong class="text-yellow-500">• Culture Building:</strong> Monthly "Chat-n-Share" segments during faculty meetings.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-black text-slate-400 py-8 border-t border-slate-700 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+        <p class="mb-2">&copy; 2026 Carolina EdTech. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>

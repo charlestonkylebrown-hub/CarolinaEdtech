@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Carolina EdTech</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;1,300&family=Open+Sans:wght@400;600&display=swap');
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Merriweather', serif; }
+        .logo-icon { transition: transform 0.3s ease; }
+        .logo-icon:hover { transform: scale(1.1); }
+        .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .mobile-menu.active { max-height: 300px; }
+    </style>
+</head>
+<body class="bg-slate-900 text-white antialiased flex flex-col min-h-screen">
+
+<script>
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('active');
+    }
+</script>
+
+<nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20 items-center">
+            <a href="index.html" class="flex items-center space-x-3 hover:opacity-80 transition">
+                <img src="tead.png" alt="Carolina EdTech Logo" class="logo-icon w-12 h-12 rounded-full border border-slate-600/50">
+                <div class="hidden sm:block">
+                    <span class="font-serif text-xl font-bold tracking-wide">Carolina</span>
+                    <span class="font-serif text-xl font-bold tracking-wide text-blue-400">EdTech</span>
+                </div>
+            </a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html" class="hover:text-blue-400 transition">Home</a>
+                <a href="services.html" class="hover:text-blue-400 transition">Executive Tiers</a>
+                <a href="pd.html" class="hover:text-blue-400 transition">Professional Development</a>
+                <a href="contact.html" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2 rounded-md font-semibold transition shadow-lg">Start Consultation</a>
+            </div>
+            <button id="menu-button" class="md:hidden flex flex-col space-y-1 focus:outline-none" onclick="toggleMobileMenu()">
+                <span class="w-6 h-1 bg-white rounded"></span>
+                <span class="w-6 h-1 bg-white rounded"></span>
+                <span class="w-6 h-1 bg-white rounded"></span>
+            </button>
+        </div>
+        <div id="mobile-menu" class="mobile-menu md:hidden pb-4">
+            <a href="index.html" class="block py-2 px-4 hover:bg-slate-800 rounded transition">Home</a>
+            <a href="services.html" class="block py-2 px-4 hover:bg-slate-800 rounded transition">Executive Tiers</a>
+            <a href="pd.html" class="block py-2 px-4 hover:bg-slate-800 rounded transition">Professional Development</a>
+            <a href="contact.html" class="block py-2 px-4 bg-blue-600 hover:bg-blue-500 rounded transition font-semibold mt-2">Start Consultation</a>
+        </div>
+    </div>
+</nav>
+
+<section class="py-20 flex-grow">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-slate-800 p-8 md:p-12 rounded-xl shadow-2xl border border-slate-700">
+            <div class="text-center mb-8">
+                <h1 class="text-3xl md:text-4xl font-bold mb-4">Start the Conversation</h1>
+                <p class="text-slate-300 text-lg">Are you navigating a complex digital transformation or managing enrollment-based budget adjustments? Let's build a cost-effective technology roadmap grounded in your mission.</p>
+            </div>
+
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-slate-300 mb-2">Full Name *</label>
+                        <input type="text" id="name" name="name" required class="w-full px-4 py-2 rounded bg-slate-700 border border-slate-600 text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-400/50">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-slate-300 mb-2">Institutional Email *</label>
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-2 rounded bg-slate-700 border border-slate-600 text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-400/50">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="school" class="block text-sm font-medium text-slate-300 mb-2">School Name *</label>
+                    <input type="text" id="school" name="school" required class="w-full px-4 py-2 rounded bg-slate-700 border border-slate-600 text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-400/50">
+                </div>
+
+                <div>
+                    <label for="role" class="block text-sm font-medium text-slate-300 mb-2">My Role Is: *</label>
+                    <select id="role" name="role" required class="w-full px-4 py-2 rounded bg-slate-700 border border-slate-600 text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-400/50">
+                        <option value="">-- Select a role --</option>
+                        <option value="Head of School">Head of School</option>
+                        <option value="Business Officer / CFO">Business Officer / CFO</option>
+                        <option value="Technology Director">Technology Director</option>
+                        <option value="Board Trustee">Board Trustee</option>
+                        <option value="Faculty Member">Faculty Member</option>
+                        <option value="Other Administrator">Other Administrator</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="message" class="block text-sm font-medium text-slate-300 mb-2">How can Carolina EdTech support your mission? *</label>
+                    <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2 rounded bg-slate-700 border border-slate-600 text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-400/50"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white font-bold py-3 px-4 rounded transition shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400">
+                    Request Strategy Consultation
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-black text-slate-400 py-8 border-t border-slate-700 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+        <p class="mb-2">&copy; 2026 Carolina EdTech. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>
