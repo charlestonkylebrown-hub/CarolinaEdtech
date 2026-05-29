@@ -22,7 +22,7 @@
         @keyframes fadeInOut { 0% { opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { opacity: 0; } }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased">
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
 
 <script>
     function toggleMobileMenu() {
@@ -61,17 +61,17 @@
 <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-20 items-center">
-            <a href="index.html" class="flex items-center space-x-3 hover:opacity-80 transition">
-                <img src="tead.png" alt="Carolina EdTech Logo" class="logo-icon w-12 h-12 md:w-14 md:h-14 rounded-full border border-slate-600/50">
-                <div class="hidden sm:block">
-                    <span class="font-serif text-xl font-bold tracking-wide">Carolina</span>
-                    <span class="font-serif text-xl font-bold tracking-wide text-blue-400">EdTech</span>
+            <a href="index.html" class="flex items-center space-x-2 md:space-x-3 hover:opacity-80 transition">
+                <img src="tead.png" alt="Carolina EdTech Logo" class="logo-icon w-10 h-10 md:w-14 md:h-14 rounded-full border border-slate-600/50">
+                <div>
+                    <span class="font-serif text-lg md:text-xl font-bold tracking-wide">Carolina</span>
+                    <span class="font-serif text-lg md:text-xl font-bold tracking-wide text-blue-400">EdTech</span>
                 </div>
             </a>
             <div class="hidden md:flex space-x-8 items-center">
                 <a href="index.html" class="text-blue-400 font-semibold transition">Home</a>
                 <a href="kylebrown.html" class="hover:text-blue-400 transition">About Kyle</a>
-                <a href="services.html" class="hover:text-blue-400 transition">Executive Tiers</a>
+                <a href="services.html" class="hover:text-blue-400 transition">Executive Services</a>
                 <a href="pd.html" class="hover:text-blue-400 transition">Professional Development</a>
                 <a href="contact.html" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2 rounded-md font-semibold transition shadow-lg">Start Consultation</a>
             </div>
@@ -83,8 +83,8 @@
         </div>
         <div id="mobile-menu" class="mobile-menu md:hidden pb-4">
             <a href="index.html" class="block py-2 px-4 text-blue-400 font-semibold rounded">Home</a>
-            <a href="kylebrown.html" class="block py-2 px-4 hover:bg-slate-800 rounded transition">About</a>
-            <a href="services.html" class="block py-2 px-4 hover:bg-slate-800 rounded transition">Executive Tiers</a>
+            <a href="kylebrown.html" class="block py-2 px-4 hover:bg-slate-800 rounded transition">About Kyle</a>
+            <a href="services.html" class="block py-2 px-4 hover:bg-slate-800 rounded transition">Executive Services</a>
             <a href="pd.html" class="block py-2 px-4 hover:bg-slate-800 rounded transition">Professional Development</a>
             <a href="contact.html" class="block py-2 px-4 bg-blue-600 hover:bg-blue-500 rounded transition font-semibold mt-2">Start Consultation</a>
         </div>
@@ -166,10 +166,19 @@
     </div>
 </section>
 
-<footer class="bg-black text-slate-400 py-8 border-t border-slate-700">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
-        <p class="mb-2">&copy; 2026 Carolina EdTech. All rights reserved.</p>
-        <p>Providing independent school technology consulting, Edtech Director-in-Residence partnerships, and SCISA/PAIS professional development.</p>
+<footer class="bg-black text-slate-400 py-8 border-t border-slate-700 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
+            <a href="index.html" class="hover:text-blue-400 transition">Home</a>
+            <a href="kylebrown.html" class="hover:text-blue-400 transition">About Kyle</a>
+            <a href="services.html" class="hover:text-blue-400 transition">Executive Services</a>
+            <a href="pd.html" class="hover:text-blue-400 transition">Professional Development</a>
+            <a href="contact.html" class="hover:text-blue-400 transition">Contact</a>
+        </div>
+        <div class="border-t border-slate-800 pt-6 text-center text-sm">
+            <p class="mb-2">&copy; 2026 Carolina EdTech. All rights reserved.</p>
+            <p>Providing independent school technology consulting, Edtech Director-in-Residence partnerships, and SCISA/PAIS professional development.</p>
+        </div>
     </div>
 </footer>
 </body>
