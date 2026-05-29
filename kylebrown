@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Kyle Brown | Carolina EdTech</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;1,300&family=Open+Sans:wght@400;600&display=swap');
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3, h4, .serif { font-family: 'Merriweather', serif; }
+        .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .mobile-menu.active { max-height: 300px; }
+        .logo-icon { transition: transform 0.3s ease; filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.3)); }
+        .logo-icon:hover { transform: scale(1.1); filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6)); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+
+<script>
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('active');
+    }
+</script>
+
+<nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20 items-center">
+            <a href="index.html" class="flex items-center space-x-3 hover:opacity-80 transition">
+                <img src="tead.png" alt="Carolina EdTech Logo" class="logo-icon w-12 h-12 md:w-14 md:h-14 rounded-full border border-slate-600/50">
+                <div class="hidden sm:block">
+                    <span class="font-serif text-xl font-bold tracking-wide">Carolina</span>
+                    <span class="font-serif text-xl font-bold tracking-wide text-blue-400">EdTech</span>
+                </div>
+            </a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html" class="hover:text-blue-400 transition">Home</a>
+                <a href="kylebrown.html" class="text-blue-400 font-semibold transition">About</a>
+                <a href="services.html" class="hover:text-blue-400 transition">Executive Tiers</a>
+                <a href="pd.html" class="hover:text-blue-400 transition">Professional Development</a>
+                <a href="contact.html" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2 rounded-md font-semibold transition shadow-lg">Start Consultation</a>
+            </div>
+            <button id="menu-button" class="md:hidden flex flex-col space-y-1 focus:outline-none" onclick="toggleMobileMenu()">
+                <span class="w-6 h-1 bg-white rounded"></span>
+                <span class="w-6 h-1 bg-white rounded"></span>
+                <span class="w-6 h-1 bg-white rounded"></span>
+            </button>
+        </div>
+        <div id="mobile-menu" class="mobile-menu md:hidden pb-4">
+            <a href="index.html" class="block py-2 px-4 hover:bg-slate-800 rounded transition">Home</a>
+            <a href="kylebrown.html" class="block py-2 px-4 text-blue-400 font-semibold rounded">About</a>
+            <a href="services.html" class="block py-2 px-4 hover:bg-slate-800 rounded transition">Executive Tiers</a>
+            <a href="pd.html" class="block py-2 px-4 hover:bg-slate-800 rounded transition">Professional Development</a>
+            <a href="contact.html" class="block py-2 px-4 bg-blue-600 hover:bg-blue-500 rounded transition font-semibold mt-2">Start Consultation</a>
+        </div>
+    </div>
+</nav>
+
+<section class="py-20 flex-grow bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-3 gap-12 items-start">
+            <div class="md:col-span-2">
+                <h1 class="text-4xl md:text-5xl font-bold mb-2 text-slate-900 border-l-4 border-blue-600 pl-4">Meet Kyle Brown</h1>
+                <h2 class="text-xl font-semibold text-blue-600 mb-6 pl-5">Founder & Principal Consultant</h2>
+                
+                <img src="kyle.jpg" alt="Kyle Brown, Founder of Carolina EdTech" class="w-full max-w-[280px] mx-auto mb-6 block md:float-right md:ml-8 md:mb-4 rounded-xl shadow-lg border border-slate-200 object-cover">
+                
+                <p class="mb-4 text-slate-700 leading-relaxed">Kyle Brown is an educator first and a technology strategist second. With over two decades of experience in the K-12 independent school ecosystem, Kyle brings a rare "Triple Advantage" to educational technology consulting: deep pedagogical rooting, national administrative recognition, and technical mastery.</p>
+
+                <h3 class="text-xl font-bold text-slate-900 mt-8 mb-3">A Foundation in Classroom Pedagogy</h3>
+                <p class="mb-4 text-slate-700 leading-relaxed">Kyle's academic background bridges classical academic disciplines and modern technical proficiency. He earned a Bachelor's degree in Classical Archaeology and Philosophy in 1997 from the University of Evansville, followed by a Master of Arts in Latin and Classical Studies in 2002 from the State University of New York at Albany. His graduate research focused on the digital visualization and connection of interactive archaeological excavation data maps.</p>
+                
+                <p class="mb-4 text-slate-700 leading-relaxed">During his 15-year tenure as a middle and high school Latin instructor at First Baptist School of Charleston, Kyle also moved into technology leadership in 2009. He began serving as the school's first Google Workspace for Education edtech administrator and coach after spearheading the implementation of Chromebooks and Google apps. This extensive experience in traditional teaching affords him significant professional credibility and a deep understanding of the challenges faced by educators.</p>
+
+                <h3 class="text-xl font-bold text-slate-900 mt-8 mb-3">Regional Excellence & Community Roots</h3>
+                <p class="mb-4 text-slate-700 leading-relaxed">For the past nine years, Kyle has served as the Director of Educational Technology at Trident Academy in Mount Pleasant, South Carolina, a leading institution specializing in multi-sensory instruction for students with language based learning differences such as dyslexia and dysgraphia.</p>
+                
+                <p class="mb-4 text-slate-700 leading-relaxed">Kyle’s dedication to education has been deeply intertwined with the Charleston community since 2003. He actively helps manage and maintain two annual scholarships honoring his late wife, Melissa Legare: one supporting students at First Baptist School, and another benefiting college-bound members of The Boon Project, a Lowcountry non-profit where she served as a board member.</p>
+            </div>
+
+            <div class="bg-slate-50 p-8 rounded-xl border border-slate-200 shadow-lg sticky top-28">
+                <h4 class="font-bold text-slate-900 text-xl mb-6 text-center border-b border-slate-200 pb-4">Recognized Excellence</h4>
+                <div class="space-y-8">
+                    <div class="text-center">
+                        <img src="nboa.jpg" alt="NBOA Professional Achievement Award Logo" class="h-24 w-auto mx-auto mb-4 object-contain drop-shadow-sm">
+                        <h5 class="font-bold text-lg text-slate-800">2021 NBOA Award</h5>
+                        <p class="text-sm text-slate-600 mt-2">Recipient of the National Business Officers Association Professional Achievement Award.</p>
+                    </div>
+                    
+                    <div class="text-center pt-8 border-t border-slate-200">
+                        <img src="trainer.jpg" alt="Google for Education Certified Trainer Badge" class="h-24 w-auto mx-auto mb-4 object-contain drop-shadow-sm">
+                        <h5 class="font-bold text-lg text-slate-800">Google Certified Trainer</h5>
+                        <p class="text-sm text-slate-600 mt-2">One of only seven certified experts within a 50-mile radius of the Lowcountry.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-black text-slate-400 py-8 border-t border-slate-700 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+        <p class="mb-2">&copy; 2026 Carolina EdTech. All rights reserved.</p>
+        <p>Providing independent school technology consulting, Edtech Director-in-Residence partnerships, and SCISA/PAIS professional development.</p>
+    </div>
+</footer>
+</body>
+</html>
