@@ -1,3 +1,14 @@
+Here is the updated `index.html` file.
+
+I have made the following updates to the **"About the Founder"** section:
+
+1. **Added `kyle.jpg**`: It is styled to sit beautifully within the text (floating to the right on larger screens, and centering on mobile devices) with a subtle shadow and rounded corners.
+2. **Replaced the placeholder icons**: I swapped out the SVG icons in the sidebar for `nboa.jpg` and `trainer.jpg`, making sure they center properly and maintain their aspect ratios.
+3. **Cleaned up the text**: I removed the `` reference tags from the previous draft so your code is production-ready.
+
+Make sure `kyle.jpg`, `nboa.jpg`, and `trainer.jpg` are saved in the same folder as this file and your logo.
+
+```html
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -70,6 +81,7 @@
             </a>
             <div class="hidden md:flex space-x-8 items-center">
                 <a href="index.html" class="text-blue-400 font-semibold transition">Home</a>
+                <a href="#about" class="hover:text-blue-400 transition">About</a>
                 <a href="services.html" class="hover:text-blue-400 transition">Executive Tiers</a>
                 <a href="pd.html" class="hover:text-blue-400 transition">Professional Development</a>
                 <a href="contact.html" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2 rounded-md font-semibold transition shadow-lg">Start Consultation</a>
@@ -82,6 +94,7 @@
         </div>
         <div id="mobile-menu" class="mobile-menu md:hidden pb-4">
             <a href="index.html" class="block py-2 px-4 text-blue-400 font-semibold rounded">Home</a>
+            <a href="#about" class="block py-2 px-4 hover:bg-slate-800 rounded transition">About</a>
             <a href="services.html" class="block py-2 px-4 hover:bg-slate-800 rounded transition">Executive Tiers</a>
             <a href="pd.html" class="block py-2 px-4 hover:bg-slate-800 rounded transition">Professional Development</a>
             <a href="contact.html" class="block py-2 px-4 bg-blue-600 hover:bg-blue-500 rounded transition font-semibold mt-2">Start Consultation</a>
@@ -127,37 +140,79 @@
     </div>
 </section>
 
+<section id="about" class="py-20 bg-slate-100 border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-3 gap-12 items-start">
+            <div class="md:col-span-2">
+                <h2 class="text-3xl md:text-4xl font-bold mb-2 text-slate-900">Meet Kyle Brown</h2>
+                <h3 class="text-xl font-semibold text-blue-600 mb-6">Founder & Principal Consultant</h3>
+                
+                <img src="kyle.jpg" alt="Kyle Brown, Founder of Carolina EdTech" class="w-full max-w-[280px] mx-auto mb-6 block md:float-right md:ml-8 md:mb-4 rounded-xl shadow-lg border border-slate-200 object-cover">
+                
+                <p class="mb-4 text-slate-700 leading-relaxed">Kyle Brown is an educator first and a technology strategist second. With over two decades of experience in the K-12 independent school ecosystem, Kyle brings a rare "Triple Advantage" to educational technology consulting: deep pedagogical rooting, national administrative recognition, and technical mastery.</p>
+
+                <h4 class="text-xl font-bold text-slate-900 mt-8 mb-3">A Foundation in Classroom Pedagogy</h4>
+                <p class="mb-4 text-slate-700 leading-relaxed">Kyle's academic background bridges classical academic disciplines and modern technical proficiency. He earned a Bachelor's degree in Classical Archaeology and Philosophy in 1997 from the University of Evansville, followed by a Master of Arts in Latin and Classical Studies in 2002 from the State University of New York at Albany. His graduate research focused on the digital visualization and connection of interactive archaeological excavation data maps.</p>
+                
+                <p class="mb-4 text-slate-700 leading-relaxed">During his 15-year tenure as a middle and high school Latin instructor at First Baptist School of Charleston, Kyle also moved into technology leadership in 2009. He began serving as the school's first Google Workspace for Education edtech administrator and coach after spearheading the implementation of Chromebooks and Google apps. This extensive experience in traditional teaching affords him significant professional credibility and a deep understanding of the challenges faced by educators.</p>
+
+                <h4 class="text-xl font-bold text-slate-900 mt-8 mb-3">Regional Excellence & Community Roots</h4>
+                <p class="mb-4 text-slate-700 leading-relaxed">For the past nine years, Kyle has served as the Director of Educational Technology at Trident Academy in Mount Pleasant, South Carolina, a leading institution specializing in multi-sensory instruction for students with language based learning differences such as dyslexia and dysgraphia.</p>
+                
+                <p class="mb-4 text-slate-700 leading-relaxed">Kyle’s dedication to education has been deeply intertwined with the Charleston community since 2003. He actively helps manage and maintain two annual scholarships honoring his late wife, Melissa Legare: one supporting students at First Baptist School, and another benefiting college-bound members of The Boon Project, a Lowcountry non-profit where she served as a board member.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-lg sticky top-28">
+                <h4 class="font-bold text-slate-900 text-xl mb-6 text-center border-b border-slate-100 pb-4">Recognized Excellence</h4>
+                <div class="space-y-8">
+                    <div class="text-center">
+                        <img src="nboa.jpg" alt="NBOA Professional Achievement Award Logo" class="h-24 w-auto mx-auto mb-4 object-contain drop-shadow-sm">
+                        <h5 class="font-bold text-lg text-slate-800">2021 NBOA Award</h5>
+                        <p class="text-sm text-slate-600 mt-2">Recipient of the National Business Officers Association Professional Achievement Award.</p>
+                    </div>
+                    
+                    <div class="text-center pt-8 border-t border-slate-100">
+                        <img src="trainer.jpg" alt="Google for Education Certified Trainer Badge" class="h-24 w-auto mx-auto mb-4 object-contain drop-shadow-sm">
+                        <h5 class="font-bold text-lg text-slate-800">Google Certified Trainer</h5>
+                        <p class="text-sm text-slate-600 mt-2">One of only seven certified experts within a 50-mile radius of the Lowcountry.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="py-20 bg-slate-900 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid md:grid-cols-2 gap-12 items-center">
             <div>
                 <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-400">Our Philosophy: Augmentation, Not Automation</h2>
-                <p class="mb-4 text-slate-300">We firmly believe technology represents a specialized toolbox to be handled by intentional human hands. The instructor's academic material and intellectual authority must remain at the center. Digital tools amplify; they never replace.</p>
+                <p class="mb-4 text-slate-300">We conduct our consulting based on the core philosophy of "Augmentation, Not Automation," maintaining that technology should never "drive the bus" in educational environments. The instructor's academic material and intellectual authority must remain at the center. Digital tools amplify; they never replace.</p>
                 <ul class="space-y-6 mt-8">
                     <li class="flex items-start">
                         <span class="text-yellow-500 mr-3 text-xl font-bold">✓</span>
                         <div>
                             <strong class="block text-lg mb-2">The Digital Education Toolbox</strong>
-                            <span class="text-slate-300 text-sm">Think of classroom technology as you would a student who has a really cool set of colored pencils. They wouldn't just use those colored pencils for every assignment.</span>
+                            <span class="text-slate-300 text-sm">We view hardware and software as a foundational toolkit, much like a set of high-quality colored pencils for coded note-taking. He utilizes these tools to facilitate multi-modal learning, address executive function hurdles, and enhance academic understanding under human supervision. Kyle emphasizes that digital solutions are not a universal requirement for every challenge; although strategic technology use is impactful, it should be applied purposefully rather than simply because it exists.</span>
                         </div>
                     </li>
                     <li class="flex items-start">
                         <span class="text-yellow-500 mr-3 text-xl font-bold">✓</span>
                         <div>
                             <strong class="block text-lg">Ditching Passive Edu-tainment</strong>
-                            <span class="text-slate-400 text-sm">We strictly oppose uncritical digital downtime. Activities must be structured, teacher-led, and purposefully mapped to rigorous learning outcomes.</span>
+                            <span class="text-slate-400 text-sm">We strictly oppose uncritical digital downtime. Activities must be structured, teacher-led, and purposefully mapped to rigorous learning outcomes, helping schools transition technology from a source of passive distraction into an active, professional instrument.</span>
                         </div>
                     </li>
                 </ul>
             </div>
             <div class="bg-slate-800 p-8 rounded-lg border border-slate-700 shadow-2xl">
                 <h3 class="text-2xl font-bold mb-4 text-white">The Teacher Action Plan</h3>
-                <p class="text-sm text-slate-300 mb-6">Every core consulting engagement includes our proprietary framework to ensure visible classroom results:</p>
+                <p class="text-sm text-slate-300 mb-6">Through custom professional development and long-term strategic implementation, we utilize proprietary plans to ensure that high-level strategy translates into visible classroom results:</p>
                 <ul class="space-y-3 text-sm text-slate-300">
-                    <li><strong class="text-blue-300">1. Strategic Objective:</strong> Identify mission-aligned goals aligned with ISTE standards.</li>
-                    <li><strong class="text-blue-300">2. The Augmentation:</strong> Implement specific technical workflows paired with academic goals.</li>
-                    <li><strong class="text-blue-300">3. Expected Outcome:</strong> Measure feedback on work organization and student engagement.</li>
-                    <li><strong class="text-blue-300">4. Technology Guardrails:</strong> Establish explicit usage permissions to protect academic integrity.</li>
+                    <li><strong class="text-blue-300">1. Strategic Objective:</strong> Pinpoint mission-aligned learning goals.</li>
+                    <li><strong class="text-blue-300">2. The Augmentation:</strong> Standardize specific technical workflows alongside academic directives.</li>
+                    <li><strong class="text-blue-300">3. Expected Outcome:</strong> Measure feedback on work organization and student expression.</li>
+                    <li><strong class="text-blue-300">4. Technology Guardrails:</strong> Establish explicit usage permissions to safeguard academic integrity.</li>
                 </ul>
             </div>
         </div>
@@ -172,3 +227,5 @@
 </footer>
 </body>
 </html>
+
+```
