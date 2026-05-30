@@ -18,10 +18,30 @@
 <body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
 
 <script>
+    // Mobile Menu Toggle
     function toggleMobileMenu() {
         const menu = document.getElementById('mobile-menu');
         menu.classList.toggle('active');
     }
+
+    // Slideshow Logic for Kyle's Images
+    document.addEventListener('DOMContentLoaded', function() {
+        let currentSlide = 0;
+        const totalSlides = 8;
+        
+        setInterval(() => {
+            // Fade out current slide
+            document.getElementById(`slide-${currentSlide}`).classList.remove('opacity-100');
+            document.getElementById(`slide-${currentSlide}`).classList.add('opacity-0');
+            
+            // Increment to next slide (loop back to 0 if at the end)
+            currentSlide = (currentSlide + 1) % totalSlides;
+            
+            // Fade in next slide
+            document.getElementById(`slide-${currentSlide}`).classList.remove('opacity-0');
+            document.getElementById(`slide-${currentSlide}`).classList.add('opacity-100');
+        }, 7000); // Change image every 7 seconds
+    });
 </script>
 
 <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-md">
@@ -63,15 +83,28 @@
         <h1 class="text-4xl md:text-5xl font-bold mb-2 text-slate-900 border-l-4 border-blue-600 pl-4">Meet Kyle Brown</h1>
         <h2 class="text-xl font-semibold text-blue-600 mb-10 pl-5">Founder & Principal Consultant</h2>
         
-        <img src="kyle.jpg" alt="Kyle Brown" class="w-full max-w-[300px] mx-auto mb-6 block md:float-right md:ml-10 md:mb-6 rounded-xl shadow-lg border border-slate-200 object-cover">
+        <div class="relative w-full max-w-[300px] h-[350px] md:h-[400px] mx-auto mb-6 block md:float-right md:ml-10 md:mb-6 rounded-xl shadow-lg border border-slate-200 overflow-hidden bg-slate-100">
+            <img src="Kyle1.jpg" alt="Kyle Brown" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100" id="slide-0">
+            <img src="Kyle2.jpg" alt="Kyle Brown" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" id="slide-1">
+            <img src="Kyle3.jpg" alt="Kyle Brown" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" id="slide-2">
+            <img src="Kyle4.jpg" alt="Kyle Brown" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" id="slide-3">
+            <img src="Kyle5.jpg" alt="Kyle Brown" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" id="slide-4">
+            <img src="Kyle6.jpg" alt="Kyle Brown" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" id="slide-5">
+            <img src="Kyle7.jpg" alt="Kyle Brown" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" id="slide-6">
+            <img src="Kyle8.jpg" alt="Kyle Brown" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" id="slide-7">
+        </div>
         
-        <p class="mb-5 text-slate-700 leading-relaxed text-lg">Kyle Brown is proud to be an educator first and a technology strategist second. With over two decades of experience in the K-12 independent school ecosystem, Kyle brings a rare "Triple Advantage" to educational technology consulting: deep pedagogical rooting, national administrative recognition, and technical mastery.</p>
+        <p class="mb-5 text-slate-700 leading-relaxed text-lg">Kyle Brown is an educator first and a technology strategist second.</p>
+        
+        <p class="mb-10 text-slate-700 leading-relaxed text-lg">With over two decades of experience in the K-12 independent school ecosystem, Kyle brings a rare "Triple Advantage" to educational technology consulting: deep pedagogical rooting, national administrative recognition, and technical mastery.</p>
 
         <h3 class="text-2xl font-bold text-slate-900 mt-12 mb-4">A Foundation in Classroom Pedagogy</h3>
         
         <p class="mb-5 text-slate-700 leading-relaxed text-lg">Kyle has an academic background that bridges classical academic disciplines and modern technical proficiency.</p>
         
-        <p class="mb-5 text-slate-700 leading-relaxed text-lg">He earned a Bachelor's degree in Classical Archaeology and Philosophy in 1997 from the University of Evansville, followed by a Master of Arts in Latin and Classical Studies in 2002 from the State University of New York at Albany. His graduate research focused on the digital visualization and connection of interactive archaeological excavation data maps.</p>
+        <p class="mb-5 text-slate-700 leading-relaxed text-lg">He earned a Bachelor's degree in Classical Archaeology and Philosophy in 1997 from the University of Evansville, followed by a Master of Arts in Latin and Classical Studies in 2002 from the State University of New York at Albany.</p>
+        
+        <p class="mb-5 text-slate-700 leading-relaxed text-lg">His graduate research focused on the digital visualization and connection of interactive archaeological excavation data maps.</p>
         
         <p class="mb-5 text-slate-700 leading-relaxed text-lg">During his 15-year tenure as a middle and high school Latin instructor at First Baptist School of Charleston, Kyle also moved into technology leadership in 2009. He began serving as the school's first Google Workspace for Education edtech administrator and coach after spearheading the implementation of Chromebooks and Google apps.</p>
         
@@ -108,13 +141,13 @@
         
         <img src="Melissa.jpg" alt="Melissa Legare" class="h-40 w-auto md:float-right md:ml-6 mb-4 rounded-lg shadow border border-slate-200 object-cover">
         
-        <p class="mb-5 text-slate-700 leading-relaxed text-lg">Kyle’s dedication to education has been deeply intertwined with the Charleston community since joining First Baptist School in 2003. It was there in 2008 where he first met and started dating his late wife, Melissa Legare (he is still in awe of the fact that she agreed to go on their first date!).</p>
+        <p class="mb-5 text-slate-700 leading-relaxed text-lg">Kyle’s dedication to education has been deeply intertwined with the Charleston community since joining First Baptist School in 2003. It was there in 2008 where he met his late wife, Melissa Legare.</p>
         
         <p class="mb-5 text-slate-700 leading-relaxed text-lg">Married in 2015 and widowed in 2020, Kyle remains passionately committed to honoring her memory and legacy of service and love to her students.</p>
         
-        <p class="mb-5 text-slate-700 leading-relaxed text-lg">He actively helps maintain two annual scholarships in her honor; <a href="https://donorbox.org/melissa-legare-brown-scholarship" class="text-blue-600 hover:underline font-medium" target="_blank" rel="noopener noreferrer">one</a> supporting students at First Baptist School, and <a href="https://donorbox.org/the-boon-project-for-young-adults-facing-cancer" class="text-blue-600 hover:underline font-medium" target="_blank" rel="noopener noreferrer">another</a> benefiting college-bound members of The Boon Project, a Lowcountry non-profit where Melissa proudly served as a board member.</p>
+        <p class="mb-5 text-slate-700 leading-relaxed text-lg">He actively helps manage and maintain two annual scholarships in her honor: <a href="https://donorbox.org/melissa-legare-brown-scholarship" class="text-blue-600 hover:underline font-medium" target="_blank" rel="noopener noreferrer">one</a> supporting students at First Baptist School, and <a href="https://donorbox.org/the-boon-project-for-young-adults-facing-cancer" class="text-blue-600 hover:underline font-medium" target="_blank" rel="noopener noreferrer">another</a> benefiting college-bound members of The Boon Project, a Lowcountry non-profit where Melissa proudly served as a board member.</p>
         
-        <p class="mb-10 text-slate-700 leading-relaxed text-lg">Kyle devotes his personal and professional life to keeping her spirit alive. He and others who felt Melissa's love and devotion in their lives put up stickers with QR codes that lead to her memorial website, so he can see where in the world (31 countries and counting) people are scanning to learn about Melissa. Just ask and he will gladly give you stickers to take on your next trip (music venues are a favorite place of his to put them). </p>
+        <p class="mb-10 text-slate-700 leading-relaxed text-lg">Kyle devotes his personal and professional life to keeping her spirit alive.</p>
 
         <div class="clearfix"></div>
         <h3 class="text-2xl font-bold text-slate-900 mt-12 mb-4">The Consulting Philosophy</h3>
