@@ -1,9 +1,3 @@
-To fix the alignment issue shown in **Screenshot 2026-06-06 12.18.03 PM.png**, the header elements (the titles, tags, and introductory descriptions) of all three cards need to occupy the exact same vertical space.
-
-By wrapping the top text content of each card inside a unified container with a responsive minimum height (`min-h-[220px]`), the horizontal rule lines and bulleted lists will line up cleanly across all viewports.
-
-Here is the corrected code for the entire page:
-
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -79,54 +73,120 @@ Here is the corrected code for the entire page:
             <!-- TIER 1 -->
             <div class="relative bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-lg shadow-xl border-2 border-blue-600 flex flex-col">
                 <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white text-xs font-extrabold px-4 py-2 rounded-full uppercase">★ Anchor Level ★</div>
-                <div class="min-h-[220px] sm:min-h-[180px] lg:min-h-[240px] xl:min-h-[200px] flex flex-col justify-start">
+                <div class="min-h-[200px] sm:min-h-[160px] lg:min-h-[220px] xl:min-h-[180px] flex flex-col justify-start">
                     <h3 class="font-bold text-2xl mb-2 text-slate-900 mt-4">Tier 1: Edtech Director-in-Residence</h3>
-                    <p class="text-sm text-slate-700 leading-relaxed mb-6">A strategic, 10-month fractional directorship model for administrative-level innovation and specialized technology coaching.</p>
+                    <p class="text-sm text-slate-700 leading-relaxed mb-6">A strategic, 10-month fractional directorship model for administrative-level innovation and specialized technology coaching[cite: 3].</p>
                 </div>
-                <ul class="text-sm text-slate-700 space-y-3 pt-4 border-t-2 border-blue-300 flex-grow">
-                    <li><strong class="text-blue-600">• Time Commitment:</strong> 2 days per week (48 hours/mo total) on-site, 6 hours each day; 20 hours/mo off-site.</li>
-                    <li><strong class="text-blue-600">• Administrative Partnership:</strong> Attendance at leadership meetings to align tech with goals and operational efficiency.</li>
-                    <li><strong class="text-blue-600">• Ethical Governance:</strong> Creation, refinement, and implementation of human-centered tech & AI policies.</li>
-                    <li><strong class="text-blue-600">• Lifecycle Management:</strong> Full management of user accounts, hardware updates, software licenses, subscription renewals, and audits.</li>
-                    <li><strong class="text-blue-600">• Instructional Integration:</strong> Twice-monthly dedicated 1-on-1 or small group coaching to weave digital tools into existing lessons.</li>
-                    <li><strong class="text-blue-600">• Virtual Availability:</strong> Ample remote availability each month for staff development, meetings, virtual coaching, and troubleshooting separate from off-site back-end tasks.</li>
-                    <li><strong class="text-blue-600">• Professional Development Savings:</strong> 25% discount on all full professional development training sessions and courses.</li>
-                </ul>
+                
+                <div class="pt-4 border-t-2 border-blue-300 flex-grow flex flex-col justify-between">
+                    <!-- Structured Time Commitment Layout -->
+                    <div class="text-sm text-slate-700 mb-6">
+                        <strong class="text-blue-600 block text-base mb-2">On-site</strong>
+                        <ul class="list-disc pl-5 space-y-1 text-slate-700 mb-4">
+                            <li>2 days per week (staff & student work)[cite: 3]</li>
+                            <li>6 hours on-site each in-person day[cite: 3]</li>
+                            <li>48 hours per month on-site total[cite: 3]</li>
+                        </ul>
+                        <strong class="text-blue-600 block text-base mb-2">Off-site</strong>
+                        <ul class="list-disc pl-5 space-y-1 text-slate-700 mb-4">
+                            <li>10 hours per month (administrative work)[cite: 3]</li>
+                            <li>10 hours per month (virtual meetings)[cite: 3]</li>
+                            <li>20 hours per month off-site total[cite: 3]</li>
+                        </ul>
+                        <p class="text-base font-bold text-slate-900 border-t border-blue-200 pt-3">
+                            Total Time Commitment: 68 hours per month[cite: 3]
+                        </p>
+                    </div>
+
+                    <!-- Core Deliverables -->
+                    <ul class="text-sm text-slate-700 space-y-3 pt-4 border-t border-blue-200">
+                        <li><strong class="text-slate-900">• Administrative Partnership:</strong> Attendance at leadership meetings to align tech with goals and operational efficiency[cite: 3].</li>
+                        <li><strong class="text-slate-900">• Ethical Governance:</strong> Creation, refinement, and implementation of human-centered tech & AI policies[cite: 3].</li>
+                        <li><strong class="text-slate-900">• Lifecycle Management:</strong> Full management of user accounts, hardware updates, software licenses, subscription renewals, and audits[cite: 3].</li>
+                        <li><strong class="text-slate-900">• Instructional Integration:</strong> Twice-monthly dedicated 1-on-1 or small group coaching to weave digital tools into existing lessons[cite: 3].</li>
+                        <li><strong class="text-slate-900">• Virtual Availability:</strong> Ample remote availability each month for staff development, meetings, virtual coaching, and troubleshooting separate from off-site back-end tasks[cite: 3].</li>
+                        <li><strong class="text-slate-900">• Professional Development Savings:</strong> 25% discount on all full professional development training sessions and courses[cite: 3].</li>
+                    </ul>
+                </div>
             </div>
 
             <!-- TIER 2 -->
             <div class="bg-white p-8 rounded-lg shadow border-t-4 border-slate-400 flex flex-col">
-                <div class="min-h-[220px] sm:min-h-[180px] lg:min-h-[240px] xl:min-h-[200px] flex flex-col justify-start">
+                <div class="min-h-[200px] sm:min-h-[160px] lg:min-h-[220px] xl:min-h-[180px] flex flex-col justify-start">
                     <h3 class="font-bold text-2xl mb-2 text-slate-900">Tier 2: Edtech Partner</h3>
                     <p class="text-xs font-bold text-slate-500 mb-4 uppercase">Premium Level</p>
-                    <p class="text-sm text-slate-600 leading-relaxed mb-6">10-month fractional leadership and expert coaching providing executive-level technology guidance without full-time employee costs.</p>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-6">10-month fractional leadership and expert coaching providing executive-level technology guidance without full-time employee costs[cite: 3].</p>
                 </div>
-                <ul class="text-sm text-slate-700 space-y-3 pt-4 border-t border-slate-200 flex-grow">
-                    <li><strong class="text-slate-400">• Time Commitment:</strong> 1 day per week (20 hours/mo total) on-site, 5 hours each day; 20 hours/mo off-site.</li>
-                    <li><strong class="text-slate-400">• Administrative Partnership:</strong> Attendance at leadership meetings to align technology with institutional goals and operational efficiency.</li>
-                    <li><strong class="text-slate-400">• Ethical Governance:</strong> Creation, refinement, and implementation of human-centered AI and other technology policies.</li>
-                    <li><strong class="text-slate-400">• Lifecycle Management:</strong> Full management of user accounts, software license renewals, and performance audits.</li>
-                    <li><strong class="text-slate-400">• Instructional Integration:</strong> Monthly 1-on-1 or small group coaching to seamlessly integrate 'augmentation, not automation' tools.</li>
-                    <li><strong class="text-slate-400">• Virtual Availability:</strong> 5 hours of remote availability per month for meetings, virtual coaching, and account troubleshooting.</li>
-                    <li><strong class="text-slate-400">• Professional Development Savings:</strong> 20% discount on all full professional development training sessions and courses.</li>
-                </ul>
+                
+                <div class="pt-4 border-t border-slate-200 flex-grow flex flex-col justify-between">
+                    <!-- Structured Time Commitment Layout -->
+                    <div class="text-sm text-slate-700 mb-6">
+                        <strong class="text-slate-800 block text-base mb-2">On-site</strong>
+                        <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-4">
+                            <li>1 day per week (staff & student work)[cite: 3]</li>
+                            <li>5 hours on-site each in-person day[cite: 3]</li>
+                            <li>20 hours per month on-site total[cite: 3]</li>
+                        </ul>
+                        <strong class="text-slate-800 block text-base mb-2">Off-site</strong>
+                        <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-4">
+                            <li>10 hours per month (administrative work)[cite: 3]</li>
+                            <li>10 hours per month (virtual meetings)[cite: 3]</li>
+                            <li>20 hours per month off-site total[cite: 3]</li>
+                        </ul>
+                        <p class="text-base font-bold text-slate-900 border-t border-slate-200 pt-3">
+                            Total Time Commitment: 40 hours per month[cite: 3]
+                        </p>
+                    </div>
+
+                    <!-- Core Deliverables -->
+                    <ul class="text-sm text-slate-700 space-y-3 pt-4 border-t border-slate-200">
+                        <li><strong class="text-slate-900">• Administrative Partnership:</strong> Attendance at leadership meetings to align technology with institutional goals and operational efficiency[cite: 3].</li>
+                        <li><strong class="text-slate-900">• Ethical Governance:</strong> Creation, refinement, and implementation of human-centered AI and other technology policies[cite: 3].</li>
+                        <li><strong class="text-slate-900">• Lifecycle Management:</strong> Full management of user accounts, software license renewals, and performance audits[cite: 3].</li>
+                        <li><strong class="text-slate-900">• Instructional Integration:</strong> Monthly 1-on-1 or small group coaching to seamlessly integrate 'augmentation, not automation' tools[cite: 3].</li>
+                        <li><strong class="text-slate-900">• Virtual Availability:</strong> 5 hours of remote availability per month for meetings, virtual coaching, and account troubleshooting[cite: 3].</li>
+                        <li><strong class="text-slate-900">• Professional Development Savings:</strong> 20% discount on all full professional development training sessions and courses[cite: 3].</li>
+                    </ul>
+                </div>
             </div>
 
             <!-- TIER 3 -->
             <div class="bg-white p-8 rounded-lg shadow border-t-4 border-yellow-500 flex flex-col">
-                <div class="min-h-[220px] sm:min-h-[180px] lg:min-h-[240px] xl:min-h-[200px] flex flex-col justify-start">
+                <div class="min-h-[200px] sm:min-h-[160px] lg:min-h-[220px] xl:min-h-[180px] flex flex-col justify-start">
                     <h3 class="font-bold text-2xl mb-2 text-slate-900">Tier 3: Edtech Specialist</h3>
                     <p class="text-xs font-bold text-yellow-600 mb-4 uppercase">Operational Stability</p>
-                    <p class="text-sm text-slate-600 leading-relaxed mb-6">Designed for schools needing technical consistency and back-end health to ensure essential digital infrastructure remains functional and secure.</p>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-6">Designed for schools needing technical consistency and back-end health to ensure essential digital infrastructure remains functional and secure[cite: 3].</p>
                 </div>
-                <ul class="text-sm text-slate-700 space-y-3 pt-4 border-t border-slate-200 flex-grow">
-                    <li><strong class="text-yellow-500">• Time Commitment:</strong> 3 days per month (15 hours/mo total) on-site, 5 hours each day; 10 hours/mo off-site.</li>
-                    <li><strong class="text-yellow-500">• Managed Upkeep:</strong> Core support including management of student and staff accounts, hardware/software troubleshooting, safety logs, and infrastructure maintenance.</li>
-                    <li><strong class="text-yellow-500">• Individualized Innovation Sessions:</strong> Monthly 1-on-1 or small group coaching on tech tools designed to enhance student engagement and reduce faculty workloads.</li>
-                    <li><strong class="text-yellow-500">• Virtual Availability:</strong> 5 hours of remote availability per month for administrative meetings, virtual coaching, and updates.</li>
-                    <li><strong class="text-yellow-500">• Culture Building:</strong> Monthly "Chat-n-Share" segments during faculty meetings to showcase success stories and build digital culture.</li>
-                    <li><strong class="text-yellow-500">• Professional Development Savings:</strong> 15% discount on all full professional development training sessions and courses.</li>
-                </ul>
+                
+                <div class="pt-4 border-t border-slate-200 flex-grow flex flex-col justify-between">
+                    <!-- Structured Time Commitment Layout -->
+                    <div class="text-sm text-slate-700 mb-6">
+                        <strong class="text-yellow-600 block text-base mb-2">On-site</strong>
+                        <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-4">
+                            <li>3 days per month (staff & student work)[cite: 3]</li>
+                            <li>5 hours on-site each in-person day[cite: 3]</li>
+                            <li>15 hours per month on-site total[cite: 3]</li>
+                        </ul>
+                        <strong class="text-yellow-600 block text-base mb-2">Off-site</strong>
+                        <ul class="list-disc pl-5 space-y-1 text-slate-600 mb-4">
+                            <li>5 hours per month (administrative work)[cite: 3]</li>
+                            <li>5 hours per month (virtual meetings)[cite: 3]</li>
+                            <li>10 hours per month off-site total[cite: 3]</li>
+                        </ul>
+                        <p class="text-base font-bold text-slate-900 border-t border-slate-200 pt-3">
+                            Total Time Commitment: 25 hours per month[cite: 3]
+                        </p>
+                    </div>
+
+                    <!-- Core Deliverables -->
+                    <ul class="text-sm text-slate-700 space-y-3 pt-4 border-t border-slate-200">
+                        <li><strong class="text-slate-900">• Managed Upkeep:</strong> Core support including management of student and staff accounts, hardware/software troubleshooting, safety logs, and infrastructure maintenance[cite: 3].</li>
+                        <li><strong class="text-slate-900">• Individualized Innovation Sessions:</strong> Monthly 1-on-1 or small group coaching on tech tools designed to enhance student engagement and reduce faculty workloads[cite: 3].</li>
+                        <li><strong class="text-slate-900">• Virtual Availability:</strong> 5 hours of remote availability per month for administrative meetings, virtual coaching, and updates[cite: 3].</li>
+                        <li><strong class="text-slate-900">• Culture Building:</strong> Monthly "Chat-n-Share" segments during faculty meetings to showcase success stories and build digital culture[cite: 3].</li>
+                        <li><strong class="text-slate-900">• Professional Development Savings:</strong> 15% discount on all full professional development training sessions and courses[cite: 3].</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
@@ -138,11 +198,11 @@ Here is the corrected code for the entire page:
                 <div class="lg:col-span-1">
                     <h3 class="font-bold text-2xl mb-3 text-slate-900">On-Demand Hourly Service</h3>
                     <p class="text-sm text-slate-600 leading-relaxed mb-4">
-                        Our standard hourly option provides flexible, on-demand access to high-level technical skills, pedagogical expertise, and administrative strategy without a long-term tier commitment[cite: 3]. This structure covers short-term tactical projects including data privacy audits, software spend analysis, user account lifecycle systems, and leadership policy consultations.
+                        Our standard hourly option provides flexible, on-demand access to high-level technical skills, pedagogical expertise, and administrative strategy without a long-term tier commitment[cite: 3]. This structure covers short-term tactical projects including data privacy audits, software spend analysis, user account lifecycle systems, and leadership policy consultations[cite: 3].
                     </p>
                     <div class="bg-slate-50 p-4 border-l-4 border-yellow-500 rounded text-xs text-slate-500 leading-relaxed">
                         <span class="font-bold block text-slate-700 mb-1">Scope Exclusion:</span>
-                        Hourly frameworks strictly exclude the development and presentation of formal, large-group professional development courses or faculty workshops, which require specialized backend curriculum engineering.
+                        Hourly frameworks strictly exclude the development and presentation of formal, large-group professional development courses or faculty workshops, which require specialized backend curriculum engineering[cite: 3].
                     </div>
                 </div>
 
@@ -150,7 +210,7 @@ Here is the corrected code for the entire page:
                 <div class="lg:col-span-2 bg-slate-900 text-slate-100 p-6 md:p-8 rounded-lg shadow-inner">
                     <h4 class="font-serif font-bold text-xl mb-3 text-blue-400">The Contract Value Advantage</h4>
                     <p class="text-sm text-slate-300 mb-6 leading-relaxed">
-                        While on-demand service is excellent for isolated support tasks, committing to an academic-year tier contract introduces a significant structural advantage, guaranteeing a major percentage discount compared to standalone hourly evaluation equivalents:
+                        While on-demand service is excellent for isolated support tasks, committing to an academic-year tier contract introduces a significant structural advantage, guaranteeing a major percentage discount compared to standalone hourly evaluation equivalents[cite: 3]:
                     </p>
 
                     <!-- Percent Savings Matrix Grid -->
@@ -167,21 +227,21 @@ Here is the corrected code for the entire page:
                             <tbody class="text-slate-300 divide-y divide-slate-800">
                                 <tr>
                                     <td class="py-3 font-medium text-white">Tier 1: Director-in-Residence</td>
-                                    <td class="py-3 text-center text-blue-300">Save 20% vs. Hourly Rate</td>
-                                    <td class="py-3 text-center text-yellow-500 font-bold">Save 28% vs. Hourly Rate</td>
-                                    <td class="py-3 text-right text-slate-400">20% Discount</td>
+                                    <td class="py-3 text-center text-blue-300">Save 20% vs. Hourly Rate[cite: 3]</td>
+                                    <td class="py-3 text-center text-yellow-500 font-bold">Save 28% vs. Hourly Rate[cite: 3]</td>
+                                    <td class="py-3 text-right text-slate-400">20% Discount[cite: 3]</td>
                                 </tr>
                                 <tr>
                                     <td class="py-3 font-medium text-white">Tier 2: Edtech Partner</td>
-                                    <td class="py-3 text-center text-blue-300">Save 16% vs. Hourly Rate</td>
-                                    <td class="py-3 text-center text-yellow-500 font-bold">Save 24% vs. Hourly Rate</td>
-                                    <td class="py-3 text-right text-slate-400">20% Discount</td>
+                                    <td class="py-3 text-center text-blue-300">Save 16% vs. Hourly Rate[cite: 3]</td>
+                                    <td class="py-3 text-center text-yellow-500 font-bold">Save 24% vs. Hourly Rate[cite: 3]</td>
+                                    <td class="py-3 text-right text-slate-400">20% Discount[cite: 3]</td>
                                 </tr>
                                 <tr>
                                     <td class="py-3 font-medium text-white">Tier 3: Edtech Specialist</td>
-                                    <td class="py-3 text-center text-blue-300">Save 14% vs. Hourly Rate</td>
-                                    <td class="py-3 text-center text-yellow-500 font-bold">Save 22% vs. Hourly Rate</td>
-                                    <td class="py-3 text-right text-slate-400">20% Discount</td>
+                                    <td class="py-3 text-center text-blue-300">Save 14% vs. Hourly Rate[cite: 3]</td>
+                                    <td class="py-3 text-center text-yellow-500 font-bold">Save 22% vs. Hourly Rate[cite: 3]</td>
+                                    <td class="py-3 text-right text-slate-400">20% Discount[cite: 3]</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -189,10 +249,10 @@ Here is the corrected code for the entire page:
 
                     <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400 leading-relaxed">
                         <p class="mb-1">
-                            <span class="text-yellow-500 font-semibold">• Early Renewal Benefit:</span> Securing contract commitments by April 30th applies an automated 10% rate reduction across all standard tier layers for the upcoming academic budget cycle.
+                            <span class="text-yellow-500 font-semibold">• Early Renewal Benefit:</span> Securing contract commitments by April 30th applies an automated 10% rate reduction across all standard tier layers for the upcoming academic budget cycle[cite: 3].
                         </p>
                         <p>
-                            <span class="text-yellow-500 font-semibold">• Contract Overage Safety:</span> For all operations requested above your active tier configuration, signed partners automatically receive a flat 20% discount off standard on-demand billing points.
+                            <span class="text-yellow-500 font-semibold">• Contract Overage Safety:</span> For all operations requested above your active tier configuration, signed partners automatically receive a flat 20% discount off standard on-demand billing points[cite: 3].
                         </p>
                     </div>
                 </div>
