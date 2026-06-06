@@ -7,8 +7,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;1,300&family=Open+Sans:wght@400;600&display=swap');
-        body { font-family: 'Open Sans', sans-serif; }
+        body { font-family: 'Open Sans', sans-serif; font-size: 18px; }
         h1, h2, h3, h4 { font-family: 'Merriweather', serif; }
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2.2rem; }
+        h3 { font-size: 1.6rem; }
+        h4 { font-size: 1.2rem; }
         .logo-icon { transition: transform 0.3s ease; filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.3)); }
         .logo-icon:hover { transform: scale(1.1); filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6)); }
         .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
@@ -32,6 +36,11 @@
             display: flex;
             flex-direction: column;
         }
+        
+        /* Enhanced text contrast */
+        .text-slate-700 { color: #1e293b; }
+        .text-slate-600 { color: #1e293b; }
+        .text-slate-500 { color: #334155; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
@@ -49,17 +58,17 @@
             <a href="index.html" class="flex items-center space-x-2 md:space-x-3 hover:opacity-80 transition">
                 <img src="tead.png" alt="Carolina EdTech Logo" class="logo-icon w-10 h-10 md:w-14 md:h-14 rounded-full border border-slate-600/50">
                 <div>
-                    <span class="font-serif text-lg md:text-xl font-bold tracking-wide">Carolina</span>
-                    <span class="font-serif text-lg md:text-xl font-bold tracking-wide text-blue-400">EdTech</span>
+                    <span class="font-serif text-lg md:text-2xl font-bold tracking-wide">Carolina</span>
+                    <span class="font-serif text-lg md:text-2xl font-bold tracking-wide text-blue-400">EdTech</span>
                 </div>
             </a>
-            <div class="hidden md:flex space-x-6 lg:space-x-8 items-center text-sm lg:text-base">
+            <div class="hidden md:flex space-x-6 lg:space-x-8 items-center text-base lg:text-lg font-medium">
                 <a href="index.html" class="hover:text-blue-400 transition">Home</a>
                 <a href="it-vs-edtech.html" class="hover:text-blue-400 transition">EdTech vs. IT</a>
                 <a href="services.html" class="hover:text-blue-400 transition">Executive Services</a>
                 <a href="pd.html" class="hover:text-blue-400 transition">Professional Development</a>
                 <a href="kylebrown.html" class="hover:text-blue-400 transition">About Kyle</a>
-                <a href="contact.html" class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-md font-semibold transition shadow-lg">Start Consultation</a>
+                <a href="contact.html" class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-3 rounded-md font-semibold transition shadow-lg text-base">Start Consultation</a>
             </div>
             <button id="menu-button" class="md:hidden flex flex-col space-y-1 focus:outline-none" onclick="toggleMobileMenu()">
                 <span class="w-6 h-1 bg-white rounded"></span>
@@ -68,12 +77,12 @@
             </button>
         </div>
         <div id="mobile-menu" class="mobile-menu md:hidden pb-4">
-            <a href="index.html" class="block py-2 px-4 hover:bg-slate-800 rounded transition">Home</a>
-            <a href="it-vs-edtech.html" class="block py-2 px-4 hover:bg-slate-800 rounded transition">EdTech vs. IT</a>
-            <a href="services.html" class="block py-2 px-4 hover:bg-slate-800 rounded transition">Executive Services</a>
-            <a href="pd.html" class="block py-2 px-4 hover:bg-slate-800 rounded transition">Professional Development</a>
-            <a href="kylebrown.html" class="block py-2 px-4 hover:bg-slate-800 rounded transition">About Kyle</a>
-            <a href="contact.html" class="block py-2 px-4 bg-blue-600 hover:bg-blue-500 rounded transition font-semibold mt-2">Start Consultation</a>
+            <a href="index.html" class="block py-2 px-4 hover:bg-slate-800 rounded transition text-base">Home</a>
+            <a href="it-vs-edtech.html" class="block py-2 px-4 hover:bg-slate-800 rounded transition text-base">EdTech vs. IT</a>
+            <a href="services.html" class="block py-2 px-4 hover:bg-slate-800 rounded transition text-base">Executive Services</a>
+            <a href="pd.html" class="block py-2 px-4 hover:bg-slate-800 rounded transition text-base">Professional Development</a>
+            <a href="kylebrown.html" class="block py-2 px-4 hover:bg-slate-800 rounded transition text-base">About Kyle</a>
+            <a href="contact.html" class="block py-2 px-4 bg-blue-600 hover:bg-blue-500 rounded transition font-semibold mt-2 text-base">Start Consultation</a>
         </div>
     </div>
 </nav>
@@ -81,8 +90,8 @@
 <section class="py-20 bg-slate-50 flex-grow">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Executive Service Options</h1>
-            <p class="text-lg text-slate-600 max-w-2xl mx-auto">Flexible fractional leadership models allowing institutions to scale executive tech oversight based on institutional needs.</p>
+            <h1 class="text-5xl md:text-6xl font-bold text-slate-900 mb-6">Executive Service Options</h1>
+            <p class="text-xl text-slate-700 max-w-2xl mx-auto leading-relaxed">Flexible fractional leadership models allowing institutions to scale executive tech oversight based on institutional needs.</p>
         </div>
 
         <!-- TIER SERVICE CARDS -->
@@ -90,23 +99,23 @@
             <!-- TIER 1 -->
             <div class="tier-card relative bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-lg shadow-xl border-2 border-blue-600">
                 <div class="tier-header">
-                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white text-xs font-extrabold px-4 py-2 rounded-full uppercase">★ Anchor Level ★</div>
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white text-sm font-extrabold px-4 py-2 rounded-full uppercase">★ Anchor Level ★</div>
                     <h3 class="font-bold text-2xl mb-2 text-slate-900 mt-4">Tier 1: Edtech Director-in-Residence</h3>
                 </div>
                 
                 <div class="tier-intro">
-                    <p class="text-sm text-slate-700">A strategic, 10-month fractional directorship model for administrative-level innovation and specialized technology coaching.</p>
+                    <p class="text-base text-slate-700 leading-relaxed font-medium">A strategic, 10-month fractional directorship model for administrative-level innovation and specialized technology coaching.</p>
                 </div>
 
                 <div class="tier-time">
                     <div class="pt-4 border-t-2 border-blue-300">
-                        <strong class="text-blue-600 block text-sm mb-2">On-site: 2 days/week (48 hrs/mo)</strong>
-                        <ul class="list-disc pl-5 space-y-1 text-slate-700 text-xs mb-3">
+                        <strong class="text-blue-600 block text-base mb-3 font-semibold">On-site: 2 days/week (48 hrs/mo)</strong>
+                        <ul class="list-disc pl-5 space-y-2 text-slate-700 text-sm mb-4 font-medium">
                             <li>6 hours each in-person day</li>
                             <li>Staff & student interaction</li>
                         </ul>
-                        <strong class="text-blue-600 block text-sm mb-2">Off-site: 20 hrs/mo</strong>
-                        <ul class="list-disc pl-5 space-y-1 text-slate-700 text-xs">
+                        <strong class="text-blue-600 block text-base mb-3 font-semibold">Off-site: 20 hrs/mo</strong>
+                        <ul class="list-disc pl-5 space-y-2 text-slate-700 text-sm font-medium">
                             <li>Administrative & virtual work</li>
                         </ul>
                     </div>
@@ -117,22 +126,22 @@
             <div class="tier-card bg-white p-8 rounded-lg shadow border-t-4 border-slate-400">
                 <div class="tier-header">
                     <h3 class="font-bold text-2xl mb-2 text-slate-900">Tier 2: Edtech Partner</h3>
-                    <p class="text-xs font-bold text-slate-500 mb-4 uppercase">Premium Level</p>
+                    <p class="text-sm font-bold text-slate-600 mb-4 uppercase">Premium Level</p>
                 </div>
                 
                 <div class="tier-intro">
-                    <p class="text-sm text-slate-600">10-month fractional leadership and expert coaching providing executive-level guidance without full-time employment.</p>
+                    <p class="text-base text-slate-700 leading-relaxed font-medium">10-month fractional leadership and expert coaching providing executive-level guidance without full-time employment.</p>
                 </div>
 
                 <div class="tier-time">
                     <div class="pt-4 border-t border-slate-200">
-                        <strong class="text-slate-800 block text-sm mb-2">On-site: 1 day/week (20 hrs/mo)</strong>
-                        <ul class="list-disc pl-5 space-y-1 text-slate-600 text-xs mb-3">
+                        <strong class="text-slate-800 block text-base mb-3 font-semibold">On-site: 1 day/week (20 hrs/mo)</strong>
+                        <ul class="list-disc pl-5 space-y-2 text-slate-700 text-sm mb-4 font-medium">
                             <li>5 hours each in-person day</li>
                             <li>Staff & student interaction</li>
                         </ul>
-                        <strong class="text-slate-800 block text-sm mb-2">Off-site: 20 hrs/mo</strong>
-                        <ul class="list-disc pl-5 space-y-1 text-slate-600 text-xs">
+                        <strong class="text-slate-800 block text-base mb-3 font-semibold">Off-site: 20 hrs/mo</strong>
+                        <ul class="list-disc pl-5 space-y-2 text-slate-700 text-sm font-medium">
                             <li>Administrative & virtual work</li>
                         </ul>
                     </div>
@@ -143,22 +152,22 @@
             <div class="tier-card bg-white p-8 rounded-lg shadow border-t-4 border-yellow-500">
                 <div class="tier-header">
                     <h3 class="font-bold text-2xl mb-2 text-slate-900">Tier 3: Edtech Specialist</h3>
-                    <p class="text-xs font-bold text-yellow-600 mb-4 uppercase">Operational Stability</p>
+                    <p class="text-sm font-bold text-yellow-700 mb-4 uppercase">Operational Stability</p>
                 </div>
                 
                 <div class="tier-intro">
-                    <p class="text-sm text-slate-600">Technical consistency and back-end health ensuring digital infrastructure remains functional and reliable.</p>
+                    <p class="text-base text-slate-700 leading-relaxed font-medium">Technical consistency and back-end health ensuring digital infrastructure remains functional and reliable.</p>
                 </div>
 
                 <div class="tier-time">
                     <div class="pt-4 border-t border-slate-200">
-                        <strong class="text-yellow-600 block text-sm mb-2">On-site: 3 days/month (15 hrs/mo)</strong>
-                        <ul class="list-disc pl-5 space-y-1 text-slate-600 text-xs mb-3">
+                        <strong class="text-yellow-700 block text-base mb-3 font-semibold">On-site: 3 days/month (15 hrs/mo)</strong>
+                        <ul class="list-disc pl-5 space-y-2 text-slate-700 text-sm mb-4 font-medium">
                             <li>5 hours each in-person day</li>
                             <li>Staff & student interaction</li>
                         </ul>
-                        <strong class="text-yellow-600 block text-sm mb-2">Off-site: 10 hrs/mo</strong>
-                        <ul class="list-disc pl-5 space-y-1 text-slate-600 text-xs">
+                        <strong class="text-yellow-700 block text-base mb-3 font-semibold">Off-site: 10 hrs/mo</strong>
+                        <ul class="list-disc pl-5 space-y-2 text-slate-700 text-sm font-medium">
                             <li>Administrative & virtual work</li>
                         </ul>
                     </div>
@@ -168,34 +177,34 @@
 
         <!-- SHARED FEATURES BOX -->
         <div class="bg-gradient-to-r from-slate-800 to-slate-900 text-white p-8 rounded-lg shadow-lg mb-16 border-t-4 border-blue-500">
-            <h3 class="font-bold text-2xl mb-4 text-blue-400">All Tiers Include</h3>
-            <p class="text-sm text-slate-300 leading-relaxed mb-6">
+            <h3 class="font-bold text-3xl mb-6 text-blue-300">All Tiers Include</h3>
+            <p class="text-base text-slate-200 leading-relaxed mb-8">
                 Every engagement level provides various levels of critical support across these core service pillars:
             </p>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div>
-                    <h4 class="font-semibold text-white mb-2">• Administrative Partnership</h4>
-                    <p class="text-xs text-slate-400">Leadership alignment and fractional executive-level guidance tailored to your institutional vision.</p>
+                    <h4 class="font-semibold text-white mb-3 text-lg">• Administrative Partnership</h4>
+                    <p class="text-sm text-slate-300 leading-relaxed">Leadership alignment and fractional executive-level guidance tailored to your institutional vision.</p>
                 </div>
                 <div>
-                    <h4 class="font-semibold text-white mb-2">• Ethical Policy Governance</h4>
-                    <p class="text-xs text-slate-400">Technology and AI policy creation and implementation to ensure responsible digital practices.</p>
+                    <h4 class="font-semibold text-white mb-3 text-lg">• Ethical Policy Governance</h4>
+                    <p class="text-sm text-slate-300 leading-relaxed">Technology and AI policy creation and implementation to ensure responsible digital practices.</p>
                 </div>
                 <div>
-                    <h4 class="font-semibold text-white mb-2">• Lifecycle Management</h4>
-                    <p class="text-xs text-slate-400">Account, hardware, software, and license management to maintain operational efficiency.</p>
+                    <h4 class="font-semibold text-white mb-3 text-lg">• Lifecycle Management</h4>
+                    <p class="text-sm text-slate-300 leading-relaxed">Account, hardware, software, and license management to maintain operational efficiency.</p>
                 </div>
                 <div>
-                    <h4 class="font-semibold text-white mb-2">• Instructional Coaching</h4>
-                    <p class="text-xs text-slate-400">Regular 1-on-1 sessions supporting faculty and staff in effective technology integration.</p>
+                    <h4 class="font-semibold text-white mb-3 text-lg">• Instructional Coaching</h4>
+                    <p class="text-sm text-slate-300 leading-relaxed">Regular 1-on-1 sessions supporting faculty and staff in effective technology integration.</p>
                 </div>
                 <div>
-                    <h4 class="font-semibold text-white mb-2">• Virtual Availability</h4>
-                    <p class="text-xs text-slate-400">Remote support and access ensuring continuity between on-site engagement sessions.</p>
+                    <h4 class="font-semibold text-white mb-3 text-lg">• Virtual Availability</h4>
+                    <p class="text-sm text-slate-300 leading-relaxed">Remote support and access ensuring continuity between on-site engagement sessions.</p>
                 </div>
                 <div>
-                    <h4 class="font-semibold text-white mb-2">• Professional Development Savings</h4>
-                    <p class="text-xs text-slate-400">Discounted rates on our professional development courses for your faculty.</p>
+                    <h4 class="font-semibold text-white mb-3 text-lg">• Professional Development Savings</h4>
+                    <p class="text-sm text-slate-300 leading-relaxed">Discounted rates on our professional development courses for your faculty.</p>
                 </div>
             </div>
         </div>
@@ -206,37 +215,37 @@
                 
                 <!-- Hourly Services Left Summary Box -->
                 <div class="lg:col-span-1">
-                    <h3 class="font-bold text-2xl mb-3 text-slate-900">On-Demand Hourly Service</h3>
-                    <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                    <h3 class="font-bold text-2xl mb-4 text-slate-900">On-Demand Hourly Service</h3>
+                    <p class="text-base text-slate-700 leading-relaxed mb-6 font-medium">
                         Our standard hourly option provides flexible, on-demand access to high-level technical skills, pedagogical expertise, and administrative strategy without a long-term tier commi[...]
                     </p>
-                    <div class="bg-slate-50 p-4 border-l-4 border-yellow-500 rounded text-xs text-slate-500 leading-relaxed">
-                        <span class="font-bold block text-slate-700 mb-1">Scope Exclusion:</span>
+                    <div class="bg-slate-50 p-4 border-l-4 border-yellow-500 rounded text-sm text-slate-700 leading-relaxed font-medium">
+                        <span class="font-bold block text-slate-900 mb-2">Scope Exclusion:</span>
                         Hourly frameworks strictly exclude the development and presentation of formal, large-group professional development courses or faculty workshops, which require specialized plan[...]
                     </div>
                 </div>
 
                 <!-- Strategic Efficiencies Right Details Box -->
                 <div class="lg:col-span-2 bg-slate-900 text-slate-100 p-6 md:p-8 rounded-lg shadow-inner">
-                    <h4 class="font-serif font-bold text-xl mb-3 text-blue-400">The Contract Value Advantage</h4>
-                    <p class="text-sm text-slate-300 mb-6 leading-relaxed">
+                    <h4 class="font-serif font-bold text-2xl mb-4 text-blue-300">The Contract Value Advantage</h4>
+                    <p class="text-base text-slate-300 mb-8 leading-relaxed">
                         While on-demand service is excellent for isolated support tasks, committing to a 10-month academic-year tier contract introduces a significant structural advantage. Tier contra[...]
                     </p>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm mb-6 border-b border-slate-700 pb-6">
-                        <div class="space-y-1">
-                            <h5 class="font-semibold text-white flex items-center">
-                                <span class="text-yellow-500 mr-2 font-bold">✓</span> On-Site Interaction Focus
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-base mb-8 border-b border-slate-700 pb-6">
+                        <div class="space-y-2">
+                            <h5 class="font-semibold text-white flex items-center text-lg">
+                                <span class="text-yellow-400 mr-2 font-bold text-xl">✓</span> On-Site Interaction Focus
                             </h5>
-                            <p class="text-slate-400 text-xs leading-relaxed">
+                            <p class="text-slate-400 text-sm leading-relaxed">
                                 Contracted on-site hours are strictly preserved for face-to-face, high-impact consulting with your leadership team, faculty, staff, students, and families.
                             </p>
                         </div>
-                        <div class="space-y-1">
-                            <h5 class="font-semibold text-white flex items-center">
-                                <span class="text-yellow-500 mr-2 font-bold">✓</span> Off-Site Cost Containment
+                        <div class="space-y-2">
+                            <h5 class="font-semibold text-white flex items-center text-lg">
+                                <span class="text-yellow-400 mr-2 font-bold text-xl">✓</span> Off-Site Cost Containment
                             </h5>
-                            <p class="text-slate-400 text-xs leading-relaxed">
+                            <p class="text-slate-400 text-sm leading-relaxed">
                                 All backend administrative tasks, lifecycle audits, renewals, and system engineering are pushed strictly off-site, avoiding premium billable rates for technical upkeep.
                             </p>
                         </div>
@@ -244,44 +253,44 @@
 
                     <!-- Percent Savings Matrix Grid -->
                     <div class="overflow-x-auto">
-                        <table class="w-full text-left text-xs border-collapse">
+                        <table class="w-full text-left text-sm border-collapse">
                             <thead>
-                                <tr class="text-blue-400 uppercase tracking-wider border-b border-slate-700 text-[10px]">
-                                    <th class="pb-2 font-semibold">Tier Commitment Equivalent</th>
-                                    <th class="pb-2 font-semibold text-center">Standard Contract Savings</th>
-                                    <th class="pb-2 font-semibold text-center">Early Renewal Savings</th>
-                                    <th class="pb-2 font-semibold text-right">Overage Hourly Rate</th>
+                                <tr class="text-blue-300 uppercase tracking-wider border-b border-slate-700 text-xs font-semibold">
+                                    <th class="pb-3 font-bold">Tier Commitment Equivalent</th>
+                                    <th class="pb-3 font-bold text-center">Standard Contract Savings</th>
+                                    <th class="pb-3 font-bold text-center">Early Renewal Savings</th>
+                                    <th class="pb-3 font-bold text-right">Overage Hourly Rate</th>
                                 </tr>
                             </thead>
                             <tbody class="text-slate-300 divide-y divide-slate-800">
                                 <tr>
-                                    <td class="py-3 font-medium text-white">Tier 1: Director-in-Residence</td>
+                                    <td class="py-3 font-semibold text-white">Tier 1: Director-in-Residence</td>
                                     <td class="py-3 text-center text-blue-300">Save 20% vs. Hourly Rate</td>
-                                    <td class="py-3 text-center text-yellow-500 font-bold">Save 28% vs. Hourly Rate</td>
-                                    <td class="py-3 text-right text-slate-400">20% Discount</td>
+                                    <td class="py-3 text-center text-yellow-300 font-bold">Save 28% vs. Hourly Rate</td>
+                                    <td class="py-3 text-right text-slate-300">20% Discount</td>
                                 </tr>
                                 <tr>
-                                    <td class="py-3 font-medium text-white">Tier 2: Edtech Partner</td>
+                                    <td class="py-3 font-semibold text-white">Tier 2: Edtech Partner</td>
                                     <td class="py-3 text-center text-blue-300">Save 16% vs. Hourly Rate</td>
-                                    <td class="py-3 text-center text-yellow-500 font-bold">Save 24% vs. Hourly Rate</td>
-                                    <td class="py-3 text-right text-slate-400">20% Discount</td>
+                                    <td class="py-3 text-center text-yellow-300 font-bold">Save 24% vs. Hourly Rate</td>
+                                    <td class="py-3 text-right text-slate-300">20% Discount</td>
                                 </tr>
                                 <tr>
-                                    <td class="py-3 font-medium text-white">Tier 3: Edtech Specialist</td>
+                                    <td class="py-3 font-semibold text-white">Tier 3: Edtech Specialist</td>
                                     <td class="py-3 text-center text-blue-300">Save 14% vs. Hourly Rate</td>
-                                    <td class="py-3 text-center text-yellow-500 font-bold">Save 22% vs. Hourly Rate</td>
-                                    <td class="py-3 text-right text-slate-400">20% Discount</td>
+                                    <td class="py-3 text-center text-yellow-300 font-bold">Save 22% vs. Hourly Rate</td>
+                                    <td class="py-3 text-right text-slate-300">20% Discount</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
 
-                    <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400 leading-relaxed">
-                        <p class="mb-1">
-                            <span class="text-yellow-500 font-semibold">• Early Renewal Benefit:</span> Securing contract commitments by April 30th applies an automated 10% rate reduction across all[...]
+                    <div class="mt-6 pt-4 border-t border-slate-800 text-sm text-slate-300 leading-relaxed">
+                        <p class="mb-2">
+                            <span class="text-yellow-300 font-semibold">• Early Renewal Benefit:</span> Securing contract commitments by April 30th applies an automated 10% rate reduction across all[...]
                         </p>
                         <p>
-                            <span class="text-yellow-500 font-semibold">• Contract Overage Safety:</span> For all operations requested above your active tier configuration, signed partners automatic[...]
+                            <span class="text-yellow-300 font-semibold">• Contract Overage Safety:</span> For all operations requested above your active tier configuration, signed partners automatic[...]
                         </p>
                     </div>
                 </div>
@@ -292,30 +301,30 @@
         <!-- RECONSTRUCTED CORE EDUCATIONAL COMMITMENTS SECTION -->
         <div class="border-t border-slate-200 pt-16">
             <div class="mb-8 text-center md:text-left">
-                <h2 class="text-3xl font-bold text-slate-900 mb-2">Our Educational Commitments</h2>
-                <p class="text-slate-600">The foundational paradigms directing our technological integration strategy.</p>
+                <h2 class="text-3xl font-bold text-slate-900 mb-3">Our Educational Commitments</h2>
+                <p class="text-lg text-slate-700 font-medium">The foundational paradigms directing our technological integration strategy.</p>
             </div>
             
-            <ul class="space-y-6 max-w-4xl mx-auto md:mx-0">
+            <ul class="space-y-8 max-w-4xl mx-auto md:mx-0">
                 <li class="flex items-start">
-                    <span class="text-yellow-500 mr-3 text-xl font-bold">✓</span>
+                    <span class="text-yellow-500 mr-4 text-2xl font-bold flex-shrink-0">✓</span>
                     <div>
-                        <strong class="block text-lg text-slate-900 mb-1">Ditching Passive Edu-tainment</strong>
-                        <p class="text-slate-500 text-sm leading-relaxed">We strictly oppose uncritical digital downtime. Activities must be structured, teacher-directed, and purposefully mapped to le[...]
+                        <strong class="block text-xl text-slate-900 mb-2">Ditching Passive Edu-tainment</strong>
+                        <p class="text-slate-700 text-base leading-relaxed font-medium">We strictly oppose uncritical digital downtime. Activities must be structured, teacher-directed, and purposefully mapped to le[...]
                     </div>
                 </li>
                 <li class="flex items-start">
-                    <span class="text-yellow-500 mr-3 text-xl font-bold">✓</span>
+                    <span class="text-yellow-500 mr-4 text-2xl font-bold flex-shrink-0">✓</span>
                     <div>
-                        <strong class="block text-lg text-slate-900 mb-1">Equity-Centered Implementation</strong>
-                        <p class="text-slate-500 text-sm leading-relaxed">Technology must enhance learning for all students, not deepen divides. Our approach prioritizes ensuring accessibility for stu[...]
+                        <strong class="block text-xl text-slate-900 mb-2">Equity-Centered Implementation</strong>
+                        <p class="text-slate-700 text-base leading-relaxed font-medium">Technology must enhance learning for all students, not deepen divides. Our approach prioritizes ensuring accessibility for stu[...]
                     </div>
                 </li>
                 <li class="flex items-start">
-                    <span class="text-yellow-500 mr-3 text-xl font-bold">✓</span>
+                    <span class="text-yellow-500 mr-4 text-2xl font-bold flex-shrink-0">✓</span>
                     <div>
-                        <strong class="block text-lg text-slate-900 mb-1">Teacher Agency & Professional Growth</strong>
-                        <p class="text-slate-500 text-sm leading-relaxed">Educators are decision-makers, not technology consumers. We build capacity through coaching, model lessons, and collaborative [...]
+                        <strong class="block text-xl text-slate-900 mb-2">Teacher Agency & Professional Growth</strong>
+                        <p class="text-slate-700 text-base leading-relaxed font-medium">Educators are decision-makers, not technology consumers. We build capacity through coaching, model lessons, and collaborative [...]
                     </div>
                 </li>
             </ul>
@@ -326,7 +335,7 @@
 
 <footer class="bg-black text-slate-400 py-8 border-t border-slate-700 mt-auto">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
+        <div class="flex flex-wrap justify-center gap-6 mb-8 text-base font-semibold">
             <a href="index.html" class="hover:text-blue-400 transition">Home</a>
             <a href="it-vs-edtech.html" class="hover:text-blue-400 transition">EdTech vs. IT</a>
             <a href="services.html" class="hover:text-blue-400 transition">Executive Services</a>
@@ -334,7 +343,7 @@
             <a href="kylebrown.html" class="hover:text-blue-400 transition">About Kyle</a>
             <a href="contact.html" class="hover:text-blue-400 transition">Contact</a>
         </div>
-        <div class="border-t border-slate-800 pt-6 text-center text-sm">
+        <div class="border-t border-slate-800 pt-6 text-center text-base">
             <p class="mb-2">&copy; 2026 Carolina EdTech. All rights reserved.</p>
             <p>Providing independent school technology consulting, Edtech Director-in-Residence partnerships, and SCISA/PAIS professional development.</p>
         </div>
